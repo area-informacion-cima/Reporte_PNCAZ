@@ -318,11 +318,12 @@ Durante este trimestre, el Área SIG-CIMA en coordinación con la Jefatura del S
 ```{r message = F, echo = F, eval= T}
 #| label: tbl-opiniones
 #| tbl-cap: "Opiniones técnicas y solicitudes atendidas por CIMA y la Jefatura del PN Cordillera Azul, primer trimestre 2024"
-load("U:/Reporte_PNCAZ_2024/rda/Sinhtm_Opiniones.RDA")
-kable(tabla_sinhtml, format = "markdown", escape = F, col.names = NULL) %>%
+load("U:/Reporte_PNCAZ_2024/rda/opinion_tecnica.RDA")
+# load("U:/Reporte_PNCAZ_2024/rda/Sinhtm_Opiniones.RDA")
+# kable(tabla_sinhtml, format = "markdown", escape = F, col.names = NULL) %>%
+kable(tabla_html, format = "html", escape = F, col.names = NULL) %>%
   kable_styling("striped", full_width = F) %>%
   row_spec(c(1,2,21), bold=TRUE, color = "black")
-
 ```
 
 #### 1.1.7.2 Construcción de PVC
