@@ -12,6 +12,7 @@ knitr:
     message : false
 lang: es
 editor: visual
+bibliography: references.bib
 ---
 
 ```{css}
@@ -25,11 +26,23 @@ p {
 title-block-banner: true
 ---
 
-## Resultado 1:
+```{r setup, include = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(modelsummary)
+library(knitr)
+library(kableExtra)
+```
 
-## Se mantiene el estado de conservación del PNCAZ
+# Resultado 1:
 
-### **Resultado Intermedio 1.1: La Cobertura vegetal de los ecosistemas del PNCAZ no sufren perdidas por causas humanas**
+# Se mantiene el estado de conservación del PNCAZ
+
+## **Resultado Intermedio 1.1: La Cobertura vegetal de los ecosistemas del PNCAZ no sufren perdidas por causas humanas**
 
 ### Actividad 1.1.1 Actualización del Plan de Vigilancia y Control del PNCAZ
 
@@ -67,77 +80,32 @@ Desde la unidad de Información, no hemos recibido ninguna actualización.
 
 #### 1.1.2.3  Patrullajes rutinarios, especiales y vigilancia en el PVC
 
-En los meses de enero-marzo de 2024, se realizaron 186 patrullajes (168 rutinarios y 18 especiales). Se desarrollaron 2 patrullajes especiales con mayor cobertura dentro del Parque, y 16 patrullajes especiales en la ZA ( @tbl-patrullaje); mientras los demás fueron rutinarios cubriendo tanto el Parque y su ZA [Anexo 1.1.2.3](https://drive.google.com/drive/folders/1Zo-n2uLStodr3Abo4qAuBPmbyFaBkjqC?usp=sharing).
+En los meses de enero-marzo de 2024, se realizaron 186 patrullajes; 168 rutinarios y 18 especiales Se desarrollaron 2 patrullajes especiales con mayor cobertura dentro del Parque, y 16 patrullajes especiales en la ZA @tbl-pat. Mientras que, los demás fueron rutinarios cubriendo tanto el Parque y su ZA [Anexo 1.1.2.3](https://drive.google.com/drive/folders/1Zo-n2uLStodr3Abo4qAuBPmbyFaBkjqC?usp=sharing).
 
-##### Tabla 1. Patrullajes rutinarios y especiales en la ZA y dentro del PN Cordillera Azul.
-
-| Rutinarios en PNCAZ | Rutinarios en ZA | Especial en ZA | Especial en PNCAZ | Total | Mes |
-|-----------:|-----------:|-----------:|-----------:|-----------:|:-----------|
-|                  10 |               45 |              4 |                 1 |    60 | Ene |
-|                   8 |               47 |              5 |                 1 |    61 | Feb |
-|                  10 |               48 |              7 |                 0 |    65 | Mar |
-
-Los 22 puestos reportaron el desarrollo de patrullajes en su sector. Es clave resaltar que los puestos *PV Mishquiyaquillo* y *Pisqui* recibieron apoyo comunal durante los patrullajes rutinarios. Es importante resaltar que, sólo 14 de los 22 puestos de vigilancia realizaron el trackeo espacial de su ruta de patrullaje. Esto, ha pesar que todos cuentan con los equipos gps y teléfonos inteligentes, para realizar dicha actividad. Esto continúa siendo preocupante, ya que de esta tarea, depende la estimación del esfuerzo de patrullaje en kilómetros recorridos. Además, al espacializar las rutas de patrullaje, los gestores de áreas pueden hacer ajustes de sus estrategias de patrullaje, en función de las amenazas y actividades humanas dentro y fuera del PNCAZ, en los sectores de vigilancia.
-
-```{r setup, include = FALSE}
-library(tidyverse)
-library(ggplot2)
-library(readxl)
-library(dplyr)
-library(tidyr)
-library(lubridate)
-library(modelsummary)
-library(knitr)
-library(kableExtra)
+```{r echo=F, eval=T}
+#| label: tbl-pat
+#| tbl-cap: "Patrullajes rutinarios y especiales en la ZA y dentro del PN Cordillera Azul"
+pat<-read_xlsx("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/datos/patru.xlsx")
+kable(pat, format = "markdown", escape = FALSE, align = c('c', 'c')
+      ) |>
+  row_spec(0, bold = TRUE, background = "#CCCCFF") |>
+  kable_styling("striped", full_width = F)
 ```
 
-```{r INCLUDE = F, message = FALSE, echo = FALSE, eval = F}
-load("U:/Reporte_PNCAZ/rda/smart_data_t1.RDA")
+Los 22 puestos reportaron el desarrollo de patrullajes en su sector. Es clave resaltar que los puestos *PV Mishquiyaquillo* y *Pisqui* recibieron apoyo comunal durante los patrullajes rutinarios. Es importante resaltar que, sólo 14 de los 22 puestos de vigilancia realizaron el trackeo espacial de su ruta de patrullaje. Esto, ha pesar que todos cuentan con los equipos gps y teléfonos inteligentes, para realizar dicha actividad. Esto continúa siendo preocupante, ya que de esta tarea, depende la estimación del esfuerzo de patrullaje en kilómetros recorridos. Además, al espacializar las rutas de patrullaje, los gestores de áreas pueden hacer ajustes de sus estrategias de patrullaje, en función de las amenazas y actividades humanas dentro y fuera del PNCAZ, en los sectores de vigilancia ( @tbl-npat).
 
+```{r echo = F, eval= T}
+#| label: tbl-npat
+#| tbl-cap: "Número de patrullajes (N°) realizados por Puesto de Vigialancia. Se indica el número de patrullajes grabados espacialmente, usando el GPS (Tracks)"
+
+setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/datos")
+n_pat<- read_xlsx("N_total_patrullaje.xlsx")
+kable(n_pat, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
+  row_spec(0, bold = TRUE, background = "#CCCCFF") |>
+  kable_styling("striped", full_width = F)
 ```
 
-```{r message = F, echo = F, eval= F}
-test_4 <- datos |>
-  group_by(id_patrullaje, pvc_pncaz, tipo_patrullaje) |>
-  summarise(N = n()) |>
-  arrange(desc(N))
-```
-
-```{r message = F, echo = F, warning = F, eval= F}
-datasummary_skim(test_4, type = "categorical") # tabla 1
-```
-
-##### Tabla n°2. Número de patrullajes (N°) realizados por Puesto de Vigialancia. Se indica el número de patrullajes grabados espacialmente, usando el GPS (Tracks)
-
-| Puesto de vigilancia |  N° | Tracks | Rutinario | Especial |
-|:---------------------|----:|-------:|----------:|---------:|
-| San José de Yanayacu |   3 |      0 |         3 |        0 |
-| Robashca             |   9 |      0 |         9 |        0 |
-| Chimbadillo          |   6 |      0 |         6 |        0 |
-| Mishquiyaquillo      |  11 |      2 |        11 |        0 |
-| Chambirillo          |   9 |      2 |         8 |        1 |
-| Nuevo Loreto         |  11 |      6 |         8 |        3 |
-| Shanshuico           |  10 |      7 |         7 |        3 |
-| Ipururo              |   9 |      3 |         9 |        0 |
-| Cedro Sisa           |   9 |      0 |         8 |        1 |
-| Tornillal            |   6 |      0 |         6 |        0 |
-| Mojarra              |   9 |      9 |         8 |        1 |
-| Cachatigre           |   7 |      0 |         7 |        0 |
-| Piquiyacu            |  10 |      1 |         8 |        2 |
-| Pólvora              |   9 |      3 |         7 |        2 |
-| Shapaja              |   8 |      0 |         7 |        1 |
-| Pucayacu             |  12 |      4 |        11 |        1 |
-| Santa Ana            |   8 |      3 |         7 |        1 |
-| Pisqui               |   8 |      2 |         8 |        0 |
-| Boca Noaya           |   8 |      2 |         7 |        1 |
-| Boca Pauya           |   7 |      0 |         7 |        0 |
-| Nuevo Dorado         |   7 |      4 |         7 |        0 |
-| Santa Catalina       |  10 |      3 |         9 |        1 |
-| **Total**            | 186 |     51 |       168 |       18 |
-
-------------------------------------------------------------------------
-
-### Apoyo en la vigilancia y control por los técnicos de campo de CIMA
+**Apoyo en la vigilancia y control por los técnicos de campo de CIMA**
 
 En el sector Tocache, se ha participado en 10 patrullajes rutinarios, en los subsecotres de Pólvora, Pucayacu y Aspuzana. Estas áreas fueron; [*Gosen*](https://drive.google.com/drive/folders/1S_gr7fDRAHSaC63XoaTq6saIZMXjHwC2?usp=drive_link)*, [Alto San Pedro](https://drive.google.com/drive/folders/1W8xv_Cd4tJ-7A-HW8nhL4-kgO0buykJs?usp=drive_link), [San Juan km 33](https://drive.google.com/drive/folders/1OpQ4erth-BUu4kOZ93Sl9QbvxangXL9q?usp=drive_link), Nueva Unión ([febrero](https://drive.google.com/drive/folders/1yh5telehgNFs2Bcb6bzOgjzj-eO8Cm0H?usp=drive_link), [marzo](https://drive.google.com/drive/folders/1EtroRkwwEpVToGm0ki9YzDXgc1WFZvu_?usp=drive_link)), [Alto Balsayacu](https://drive.google.com/drive/folders/1BI99vQRPTa1A0m3kySrit_WwfDPsFD9l?usp=drive_link), [Rio Azul Ibañez](https://drive.google.com/drive/folders/1BI99vQRPTa1A0m3kySrit_WwfDPsFD9l?usp=drive_link), [Consuelo (sector rio seco)](https://drive.google.com/drive/folders/1sR6QL8H0C1sI1dW72F9GrnpJUsZSGyqi?usp=sharing), [Jorge Basadre (sector Cerro Quemado)](https://drive.google.com/drive/folders/1I0sFHE9tm1X1LeauMzDTcboFMaw6T9yA?usp=sharing) y [Montaña Verde](https://drive.google.com/drive/folders/1I0sFHE9tm1X1LeauMzDTcboFMaw6T9yA?usp=sharing)*.
 
@@ -156,8 +124,8 @@ Entre el 2015 y 2024, la oficina de apoyo legal de CIMA-SERNANP ha presentado 81
 ```{r echo=FALSE}
 #| label: fig-apoyolegal
 #| fig-cap: "Número de casos en etapas de investigación"
-setwd("U:/Reporte_PNCAZ/datos")
-casos<-read.csv(file = "Cuadro_FEMAs.csv", header = T, sep = ";")
+setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/datos")
+casos <- read.csv(file = "Cuadro_FEMAs.csv", header = TRUE, sep = ";", fileEncoding = "latin1")
 casos |>
   ggplot(aes(x=Etapas_investigación, y=n..casos, fill=Atención.a.FEMAs))+
     geom_bar(stat = "identity", position=position_dodge()) +
@@ -350,16 +318,14 @@ Durante este trimestre, el Área SIG-CIMA en coordinación con la Jefatura del S
 ```{r message = F, echo = F, eval= T}
 #| label: tbl-opiniones
 #| tbl-cap: "Opiniones técnicas y solicitudes atendidas por CIMA y la Jefatura del PN Cordillera Azul, primer trimestre 2024"
-setwd("U:/Reporte_PNCAZ/rda")
-load("opinion_Tecnica.RDA")
-library(knitr)
-library(kableExtra)
-kable(tabla_html, format = "html", escape = F, col.names = NULL) %>%
-  kable_styling("striped", full_width = F)
+load("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/datos/Sinhtm_Opiniones.RDA")
+kable(tabla_sinhtml, format = "markdown", escape = F, col.names = NULL) %>%
+  kable_styling("striped", full_width = F) %>%
+  row_spec(c(1,2,21), bold=TRUE, color = "black")
 
 ```
 
-#### 1.1.7.2 Construcción de PVC 1.1.7.3 Refacción parcial de PVC
+#### 1.1.7.2 Construcción de PVC
 
 En este trimestre, se ha construido un refugio en el sector Palomar - Shashuico.
 
@@ -371,15 +337,15 @@ No se indica mayor detalle: cuando se termino la construcción?, fotos del refug
 
 En la sede Tarapoto, se realizaron las siguientes acciones:
 
-1.  Construcción de nuevos servicios higiénicos en el PVC 19.
+-   Construcción de nuevos servicios higiénicos en el PVC 19
 
-2.  Construcción de servicios higiénicos en el PVC 19.
+-   Construcción de servicios higiénicos en el PVC 19
 
-3.  Mejoramiento de acceso a los SSHH del PVC 21
+-   Mejoramiento de acceso a los SSHH del PVC 21
 
-4.  Acondicionamiento de un dormitorio en el PVC 14.
+-   Acondicionamiento de un dormitorio en el PVC 14
 
-5.  Reparación y mantenimiento del biodigestor y colocación de tanque de agua subterráneo del PVC Nuevo Loreto
+-   Reparación y mantenimiento del biodigestor y colocación de tanque de agua subterráneo del PVC Nuevo Loreto
 
 ::: callout-warning
 ## No presenta medios de verificación
@@ -391,23 +357,23 @@ En la sede Tarapoto, se realizaron las siguientes acciones:
 
 Los puestos de vigilancia y control, dentro de la jurisdicción de la sede Tarapoto, han sido equipados con lo siguiente:
 
-1.  Cama, colchón y juego de sábanas al PVC Piquiyacu.
+-   Cama, colchón y juego de sábanas al PVC Piquiyacu.
 
-2.  Cama, colchón y juego de sábanas al PVC 18.
+-   Cama, colchón y juego de sábanas al PVC 18.
 
-3.  Cama, colchón y juego de sábanas al PVC 21.
+-   Cama, colchón y juego de sábanas al PVC 21.
 
-4.  Dos mesas de madera y 6 sillas para el PVC 16.
+-   Dos mesas de madera y 6 sillas para el PVC 16.
 
-5.  Dos camas tarimas, 3 colchones, 3 mosquiteros y 3 juegos de sábanas para el PVC 11.
+-   Dos camas tarimas, 3 colchones, 3 mosquiteros y 3 juegos de sábanas para el PVC 11.
 
-6.  Dos camas tarimas, 2 colchones, 2 mosquiteros, 2 colchas polares y 2 juegos de sábanas para el PVC 14.
+-   Dos camas tarimas, 2 colchones, 2 mosquiteros, 2 colchas polares y 2 juegos de sábanas para el PVC 14.
 
-7.  Cinco protectores de colchones y 5 mosquiteros para personal del PVC Shanshuico y el refugio Palomar.
+-   Cinco protectores de colchones y 5 mosquiteros para personal del PVC Shanshuico y el refugio Palomar.
 
-8.  Una cocina de mesa para el PVC Robashca (para ser asignado a Callanayacu).
+-   Una cocina de mesa para el PVC Robashca (para ser asignado a Callanayacu).
 
-9.  Diez unidades de sueros antiofídicos para los PVC.
+-   Diez unidades de sueros antiofídicos para los PVC
 
 ::: callout-warning
 ## No presenta medios de verificación
@@ -417,9 +383,9 @@ Los puestos de vigilancia y control, dentro de la jurisdicción de la sede Tarap
 
 En la sede Tarapoto, se equipo al personal guardaparque con lo siguiente:
 
-1.  Implementación con equipos de campo (carpas, bolsas de dormir, colchonetas, colchonetas, linternas, botas, capotas para lluvia) a personal guardaparque, recientemente incorporados a la gestión.
+-   Implementación con equipos de campo (carpas, bolsas de dormir, colchonetas, colchonetas, linternas, botas, capotas para lluvia) a personal guardaparque, recientemente incorporados a la gestión.
 
-2.  31 pares de botas de jebe para personal guardaparque.
+-   31 pares de botas de jebe para personal guardaparque.
 
 #### 1.1.7.7 Hitos y letreros (LIL, LIZA, LIC)
 
@@ -431,7 +397,7 @@ Hasta la fecha, desde el 2022, se han instalado 36 letreros informativos comunal
 
 ![Letreros informativos comunales y en el límite de la ZA, del PN Cordillera Azul, instalados en el primer trimestre 2024.](images/S1_24JUN03_Map_LIC_LIZA_2024_A4.jpg){#fig-LIL}
 
-### Resultado intermedio 1.2. Las especies cinegéticas se mantienen en los sectores de uso al interior del PNCAZ
+## Resultado intermedio 1.2. Las especies cinegéticas se mantienen en los sectores de uso al interior del PNCAZ
 
 ### Actividad 1.2.1. Monitoreo de especies cinegéticas
 
@@ -467,7 +433,7 @@ Se registraron 13 lugares dónde las comunidades realizaron la cacería y pesca 
 
 #### 1.2.2.3 Registro de aprovechamiento de caza y pesca
 
-Este trimestre, registramos nueve especies de importancia para la cacería y la pesca de subsistencia. Los guardaparques, registraron 32 usuarios, que ingresaron al Parque, por motivos de caza y pesca. El *"Majas"* fue la especie más importante en términos de cacería en este trimestre; 16 usuarios aprovecharon un total de 358 kg (n= 51 ind.). Los mamíferos extraídos por cacería, representan 507 kg y las aves "*Pucacunga"* 5 kg. Mientras que, respecto a la pesca, la "*Carachama*" fue la única que se registro como aprovechada; un total de siete personas pescaron 44 kg ( @fig-especies_uso). El [Anexo 1.2.2.3](1.2.2.3%20Registro%20de%20aprovechamiento%20de%20caza%20y%20pesca) se presenta el conjunto de datos, con el detalle de los usuarios, su procedencia y el número de especies cazadas y pescadas.
+Este trimestre, registramos nueve especies de importancia para la cacería y la pesca de subsistencia. Los guardaparques, registraron 32 usuarios, que ingresaron al Parque, por motivos de caza y pesca. El *"Majas"* fue la especie más importante en términos de cacería en este trimestre; 16 usuarios aprovecharon un total de 358 kg (n= 51 ind.). Los mamíferos extraídos por cacería, representan 507 kg y las aves "*Pucacunga"* 5 kg. Mientras que, respecto a la pesca, la"*Carachama*" fue la única que se registro como aprovechada; un total de siete personas pescaron 44 kg ( @fig-especies_uso). El [Anexo 1.2.2.3](1.2.2.3%20Registro%20de%20aprovechamiento%20de%20caza%20y%20pesca) se presenta el conjunto de datos, con el detalle de los usuarios, su procedencia y el número de especies cazadas y pescadas.
 
 ![Kilogramos de especies aprovechadas por cazadores y pescadores, de la ZA del PN Cordillera Azul, en el primer trimestre 2024](images/Especies_Usuarios01-03.svg){#fig-especies_uso}
 
@@ -493,7 +459,7 @@ Todos estos registros provienen de los patrullajes rutinarios realizados entre l
 
 ![Número de registros y especies, según puesto de vigilancia y control, en el PN Cordillera Azul, en el primer trimestre 2024](images/Puestos_Especies_N.svg){#fig-spp}
 
-De acuerdo con la distribución de los 22 puestos de vigilancia y control, las especies de fauna más frecuentes, fueron el "*Vendado" Mazama americana, "Sachavaca" Tapirus terrestris, "Majas" Cunniculus paca, "Sajino" Peccari tajacu, "Paujil" Mitu tuberosum, Penelope jacquacu, "Otorongo" Panthera onca y "Tucan" Rhamphastos tucanus* (@fig-fauna_puestos). Estas especies fueron avistadas en más de 10 sectores de vigilancia y control; es decir representan las especies más comunes en los patrullajes rutinarios. Las otras especies, no son tan comunes, y algunas sólo fueron registradas en cinco de los 22 puestos de vigilancia. En el [Anexo 1.2.3.1](https://drive.google.com/drive/folders/1ewIOvvqnkCpmAxCXPlXddj0_7HUdC2VG?usp=sharing) se indican la lista total de especies, y el número de avistamientos por puestos, 11 de estas especies sólo fueron avistadas en un puesto, 16 especies en dos puestos y nueve en cuatro puestos. Resaltan los registros de "*Perro de Monte" Speothos venaticus, "Carachupa mama" Priodontes maximus, Puma concolor, "Oso de anteojos"* *Tremactos ornatus, "Tigrillo" Leopardus pardalis* y "*Maquizapa" Ateles chamek.*
+De acuerdo con la distribución de los 22 puestos de vigilancia y control, las especies de fauna más frecuentes, fueron el "*Vendado" Mazama americana, "Sachavaca" Tapirus terrestris, "Majas" Cunniculus paca, "Sajino" Peccari tajacu, "Paujil" Mitu tuberosum, Penelope jacquacu, "Otorongo" Panthera onca y "Tucan" Rhamphastos tucanus* (@fig-fauna_puestos). Estas especies fueron avistadas en más de 10 sectores de vigilancia y control; es decir representan las especies más comunes en los patrullajes rutinarios. Las otras especies, no son tan comunes, y algunas sólo fueron registradas en cinco de los 22 puestos de vigilancia. En el [Anexo 1.2.3.1](https://drive.google.com/drive/folders/1ewIOvvqnkCpmAxCXPlXddj0_7HUdC2VG?usp=sharing) se indican la lista total de especies, y el número de avistamientos por puestos, 11 de estas especies sólo fueron avistadas en un puesto, 16 especies en dos puestos y nueve en cuatro puestos. Resaltan los registros de"*Perro de Monte" Speothos venaticus, "Carachupa mama" Priodontes maximus, Puma concolor, "Oso de anteojos"* *Tremactos ornatus, "Tigrillo" Leopardus pardalis* y "*Maquizapa" Ateles chamek.*
 
 ![Registro de fauna durante los patrullajes rutinarios, en la Zona de Amortiguamiento y dentro del PN Cordillera Azul, durante el primer trimestre 2024.](images/Fauna_Guardaparque-04.svg){#fig-fauna_puestos width="945"}
 
@@ -507,7 +473,7 @@ Finalmente, considerando el número total de especies identificadas (\~230 spp) 
 
 #### 1.2.3.3 Sistematización y análisis en SMART
 
-### Resultado intermedio 1.3 Se fortalece la gobernanza del PNCAZ con los actores relevantes
+## Resultado intermedio 1.3 Se fortalece la gobernanza del PNCAZ con los actores relevantes
 
 ### Actividad 1.3.1. Seguimiento al Contrato de Administración
 
@@ -555,16 +521,16 @@ Esta actividad está programada para el siguiente trimestre.
 
 #### 1.3.3.1 Convenio con las organizaciones indígenas (agrupa varias comunidades)
 
-El 28 de febrero del presente año, en los ambientes de la oficina de CIMA Aguaytía, se llevó a cabo una reunión con el presidente (e) Marcelo Odicio Angulo de la Federación Nativa de Comunidades Kakataibos – FENACOKA, y con su equipo técnico, donde se trató temas relacionados a las actividades que CIMA viene realizando en las CCNN bases de la FENACOKA, ubicadas en la zona de amortiguamiento del Parque Nacional Cordillera Azul.
+El 28 de febrero del presente año, en los ambientes de la oficina de CIMA Aguaytía, se llevó a cabo una reunión con el presidente (e) Marcelo Odicio Angulo de la Federación Nativa de Comunidades Kakataibos -- FENACOKA, y con su equipo técnico, donde se trató temas relacionados a las actividades que CIMA viene realizando en las CCNN bases de la FENACOKA, ubicadas en la zona de amortiguamiento del Parque Nacional Cordillera Azul.
 
-Posterior a esta reunión y de acuerdo a lo acordado de forma verbal y en marco al convenio entre CIMA y FENACOKA, se compartió a la federación una copia de los siguientes documentos: - "Mejoramiento de las infraestructuras para el servicio de alojamiento de la asociación de Turismo Ecológico Saludable Ñuina Kama Jisti de Yamino", (estado: ejecutado) - "Implementación y mejora de capacidades para la producción de artesanías de calidad y el incremento de las ventas de la Asociación de Artesanas Kari Isa Xanu de Yamino", (estado: en proceso de ejecución) - Convenio de Colaboración Interinstitucional entre FENACOKA y CIMA. - Catálogo: “Artesanía Kakataibo 2023, de Yamino para el mundo” en digital y 15 unidades en físico. Por su parte, el presidente de la federación reafirmó su compromiso de seguir trabajando en el marco del respeto institucional entre CIMA y FENACOKA, y mencionó que CIMA es un aliado importante para lograr concretar los objetivos comunes de sus comunidades ubicadas en la ZA del PNCAZ bases de la federación.
+Posterior a esta reunión y de acuerdo a lo acordado de forma verbal y en marco al convenio entre CIMA y FENACOKA, se compartió a la federación una copia de los siguientes documentos: - "Mejoramiento de las infraestructuras para el servicio de alojamiento de la asociación de Turismo Ecológico Saludable Ñuina Kama Jisti de Yamino", (estado: ejecutado) - "Implementación y mejora de capacidades para la producción de artesanías de calidad y el incremento de las ventas de la Asociación de Artesanas Kari Isa Xanu de Yamino", (estado: en proceso de ejecución) - Convenio de Colaboración Interinstitucional entre FENACOKA y CIMA. - Catálogo: "Artesanía Kakataibo 2023, de Yamino para el mundo" en digital y 15 unidades en físico. Por su parte, el presidente de la federación reafirmó su compromiso de seguir trabajando en el marco del respeto institucional entre CIMA y FENACOKA, y mencionó que CIMA es un aliado importante para lograr concretar los objetivos comunes de sus comunidades ubicadas en la ZA del PNCAZ bases de la federación.
 
-En marco al “Convenio de interinstitucional entre la Federación Nativa de Comunidades Cacataibos (FENACOCA) y el Centro de Conservación, Investigación y Manejo de Áreas Naturales – Cordillera Azul (CIMA – Cordillera Azul)”, se realizó la siguiente actividad: - En referencia a la solicitud mediante CARTA N°001-2024-MOA-FENACOKA-PA de la FENACOKA presentada a CIMA Cordillera Azul, donde solicita donación de materiales de escritorio para la oficina de FENACOKA, se hizo entrega en calidad de donación de 10 artículos para uso de la Federación (@tbl-convenio).
+En marco al "Convenio de interinstitucional entre la Federación Nativa de Comunidades Cacataibos (FENACOCA) y el Centro de Conservación, Investigación y Manejo de Áreas Naturales -- Cordillera Azul (CIMA -- Cordillera Azul)", se realizó la siguiente actividad: - En referencia a la solicitud mediante CARTA N°001-2024-MOA-FENACOKA-PA de la FENACOKA presentada a CIMA Cordillera Azul, donde solicita donación de materiales de escritorio para la oficina de FENACOKA, se hizo entrega en calidad de donación de 10 artículos para uso de la Federación (@tbl-convenio).
 
 ```{r message=FALSE, echo=F, include=T}
 #| label: tbl-convenio
 #| tbl-cap: "Artículos donados por CIMA a la Federación Nativa de Comunidades Cacataibos (FECONACO), en el primer trimestre 2024"
-convenio<-read_xlsx("U:/Reporte_PNCAZ/datos/Tabla_Act133.xlsx")
+convenio<-read_xlsx("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/datos/Tabla_Act133.xlsx")
 kable(convenio, format = "markdown", col.names = c("Artículos donados", "Cantidad"), escape = FALSE) %>%
   kable_styling("striped", full_width = F)
 ```
@@ -585,7 +551,7 @@ La entrega de estos materiales fue realizada el día 15 de febrero del 2023, en 
 
 ### Actividad 1.3.4.
 
-### Actualización de Plan de Gobernanza del PNCAZ, bajo un enfoque de derechos humanos (derechos económicos, sociales, culturales y ambientales – DESCA), y estándares culturalmente adecuados.
+### Actualización de Plan de Gobernanza del PNCAZ, bajo un enfoque de derechos humanos (derechos económicos, sociales, culturales y ambientales -- DESCA), y estándares culturalmente adecuados.
 
 #### 1.3.4.1 Reunión para la Evaluación del Plan de Gobernanza
 
@@ -617,17 +583,15 @@ Esta actividad está pendiente de programar por la Dirección del Programa y la 
 
 #### 1.3.5.3 Difusión del Plan Maestro por sectores
 
-## Resultado 2:
+# Resultado 2:
 
-## Se promueve la investigación y se usa la información científica en la gestión del PNCAZ y su ZA
+# Se promueve la investigación y se usa la información científica en la gestión del PNCAZ y su ZA
 
-### Resultados Intermedio 2.1
+## Resultados Intermedio 2.1
 
-### Investigaciones priorizadas realizadas, cuyos resultados y recomendaciones son incorporadas en la gestión del PNCAZ
+## Investigaciones priorizadas realizadas, cuyos resultados y recomendaciones son incorporadas en la gestión del PNCAZ
 
-### Actividad 2.1.1.
-
-### Promoción de Investigaciones prioritarias para la gestión del PNCAZ y su ZA, como oportunidad para el desarrollo de investigación científica, inter y transdisciplinar.
+### Actividad 2.1.1. Promoción de Investigaciones prioritarias para la gestión del PNCAZ y su ZA, como oportunidad para el desarrollo de investigación científica, inter y transdisciplinar.
 
 #### 2.1.1.1. Conformación de un comité de investigadores que ayuda a identificar y promover investigaciones dentro del PNCAZ y su ZA.
 
@@ -659,9 +623,7 @@ Esta actividad se iniciará durante el segundo trimestre del año 2024, y en se 
 ## Esta actividad depende de la actividad 2.1.1.4
 :::
 
-### Actividad 2.1.2.
-
-### Inventarios biológicos y otras investigaciones para apoyar la implementación de otros resultados (Turismo, Plane s de Calidad de Vida)
+### Actividad 2.1.2. Inventarios biológicos y otras investigaciones para apoyar la implementación de otros resultados (Turismo, Plane s de Calidad de Vida)
 
 #### 2.1.2.1 Identificación de sitios prioritarios para generación de base de datos por su importancia turística y biológica en el Parque y su ZA
 
@@ -679,7 +641,7 @@ En este primer trimestre, se está evaluando áreas prioritarias de investigaci�
 
 Remedición de Parcelas en Palomar
 
-Cima viene realizando dos trabajos de investigación dentro del parque; uno para conocer la *“Regeneración Natural del Bosque, dentro de áreas que fueron previamente deforestadas, en el sector Palomar-Shanshuico"* y el segundo para estudiar la *“Dinámica del bosque en el sector Chambirillo, en una parcela permanente de vegetación”* ([Anexo 2.1.2.3](https://drive.google.com/drive/folders/1xJzJV2LgG24-U-VCK-O_0E9GijX1DV3U?usp=sharing))
+Cima viene realizando dos trabajos de investigación dentro del parque; uno para conocer la *"Regeneración Natural del Bosque, dentro de áreas que fueron previamente deforestadas, en el sector Palomar-Shanshuico"* y el segundo para estudiar la *"Dinámica del bosque en el sector Chambirillo, en una parcela permanente de vegetación"* ([Anexo 2.1.2.3](https://drive.google.com/drive/folders/1xJzJV2LgG24-U-VCK-O_0E9GijX1DV3U?usp=sharing))
 
 La investigación de regeneración natural del bosque, inició en diciembre-enero 2022 para establecer una línea base del crecimiento de las plantas, en hectáreas de bosque previamente deforestados (cuatro áreas deforestadas entre 2020 - 2022). El enero del 2024, se realizó una nueva medición del crecimiento de las plantas, con la finalidad de estimar el tiempo de recuperación. En el segundo periodo de evaluación se registraron 86 especies, siendo un total de 745 individuos registrados. Datos que difieren de la primera evaluación (2022), dónde se obtuvo 961 individuos y 95 especies. La mortalidad y el reclutamiento en el segundo año de evaluación presenta un mayor porcentaje de plantas muertas (293 ind.) que reclutas (77 ind.) @fig-reclutamiento . La dinámica de reclutamiento y muerte de las plantas continuará siendo monitoreada, en estudios siguientes.
 
@@ -687,7 +649,7 @@ La investigación de regeneración natural del bosque, inició en diciembre-ener
 
 El estudio de dinámica del bosque en la parcela permanente del sector Chambirillo, fue realizada en diciembre 2023. Se registraron 105 especies y 778 individuos entre árboles palmeras y lianas. Al respecto conviene decir que en la parcela se registró 31 individuos muertos con placas de la primera evaluación, siendo en el registro de la base de datos 2023 un total de 809 individuos. En la parcela, se registraron 490 individuos con hábitos de árbol, dos Lianaa y 317 individuos con hábito de Palmeras.
 
-La distribución de las especies según el diámetro del fuste, representó una distribución de “J” invertida, la mayoría de individuos (n = 528) tuvieron un rango de fuste entre 10 y 20 cm, siendo los más comunes. Este tipo de distribución es típica de comunidades de plantas, dónde la sucesión ecológica de especies vegetales está asegurado a futuro (@fig-distribucion).
+La distribución de las especies según el diámetro del fuste, representó una distribución de "J" invertida, la mayoría de individuos (n = 528) tuvieron un rango de fuste entre 10 y 20 cm, siendo los más comunes. Este tipo de distribución es típica de comunidades de plantas, dónde la sucesión ecológica de especies vegetales está asegurado a futuro (@fig-distribucion).
 
 ![Distribución del diámetro del fuste, de las especies de plantas registradas en la parcela permanente de Chambirillo, en el PN Cordillera Azul. Arreglar.](images/Chambirillo_distribucion.svg){#fig-distribucion width="529"}
 
@@ -715,28 +677,25 @@ Instalación de la nueva estación meteorológica. Entre enero y marzo 2024, se 
 
 Además, se realizó el mantenimiento de la estación meteorológica WatchDog. Ambas estaciones se encuentran en el Puesto de control y viglancia Chambirillo, esta última será trasladada a la Planta de acopio de Aspuzana, en el segundo trimestre, con la finalidad de ampliar nuestro registro devariación climática en la Zona de Amortiguamiento del Parque.
 
-### Resultado intermedio 2.2.
+## Resultado intermedio 2.2.
 
-### Gestión de información y difusión para la gestión del parque y su za
+## Gestión de información y difusión para la gestión del parque y su za
 
-### Actividad 2.2.1.
-
-### Seguimiento de las investigaciones que se desarrollan en el PNCAZ y su ZA
+### Actividad 2.2.1. Seguimiento de las investigaciones que se desarrollan en el PNCAZ y su ZA
 
 Se tienen registradas 16 investigaciones, en la Zona de Amortiguamiento y dentro del Parque. Estas se encuentran en distintas etapas de desarrollo, desarrolladas entre el 2022 y primer trimestre 2024 (@tbl-invest, [Anexo 2.2.1](https://drive.google.com/drive/folders/1M_9009cweO_S6HkzKrA7lYHJxB0ZOclE?usp=sharing)). Es importante resaltar que estas investigaciones no son todas las que se hicieron en el parque, sino, las que actualmente se hacen seguimiento. Una publicación del registro actualizado de las investigaciones entre 2002 - 2020, fue publicado ([Directorio-Investigaciones](https://www.cima.org.pe/es/noticias/directorio-de-investigaciones-cientificas-parque-nacional-cordillera-azul-periodo-2002-2020)). Una versión actualizada, será presentada al finalizar el año 2024, pero se proporcionarán actualizaciones periódicas durante los informes trimestrales siguientes.
 
 ```{r message = F, echo = F, eval= T}
 #| label: tbl-invest
 #| tbl-cap: "Investigaciones realizadas entre el 2022 y 2024, en la ZA y dentro del PN Cordillera Azul, al primer trimestre 2024"
-load("U:/Reporte_PNCAZ/rda/resumen_investigaciones.RDA")
-kable(tabla, format = "html", escape = F) %>%
+setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/rda")
+load("resumen_investigaciones.RDA")
+kable(tabla, format = "markdown", escape = F) %>%
   kable_styling("striped", full_width = F) %>%
   row_spec(c(1,3,6,16,21), bold="T", color = "black")
 ```
 
-### Actividad 2.2.2.
-
-### Incorporación de los resultados en los procesos de gestión del parque y su ZA.
+### Actividad 2.2.2. Incorporación de los resultados en los procesos de gestión del parque y su ZA.
 
 Producto 1 y 2 medición de planes de calidad de vida (consultoría Isabel)
 
@@ -746,9 +705,7 @@ También se evaluó la efectividad de las intervenciones de CIMA hasta entre el 
 
 Resultado de esta consultaría se ha preparado un [resumen ejecutivo](https://drive.google.com/drive/folders/1ggQl-A0yeYQIGfLxauI27KuFGWmJSw7i?usp=sharing) (adjunto en el Anexo 2.2.2).
 
-### Actividad 2.2.3.
-
-### Difusión de investigaciones realizadas en el PNCAZ y su ZA
+### Actividad 2.2.3. Difusión de investigaciones realizadas en el PNCAZ y su ZA
 
 #### 2.2.3.1. Directorio de investigaciones (resumenes de investigación)
 
@@ -782,9 +739,9 @@ Se tiene programado someter una investigación científica sobre la fauna silves
 ## Actividades serán programadas a partir del siguiente trimestre
 :::
 
-## Resultado 3.
+# Resultado 3.
 
-## Se promueve el desarrollo de actividades de turismo sostenible en sectores determinados del PNCAZ y su ZA, generando beneficios para su gestión, y para las poblaciones indígenas y locales.
+# Se promueve el desarrollo de actividades de turismo sostenible en sectores determinados del PNCAZ y su ZA, generando beneficios para su gestión, y para las poblaciones indígenas y locales.
 
 ## Resultado intermedio 3.1. Desarrollo del atractivo turístico "Chambirillo"
 
@@ -836,7 +793,9 @@ Exploración de la ruta de cacería y transito de personas entre San Martín y L
 
 #### 3.1.5.1 Monitoreo (registro de visitantes, satisfacción al cliente, manejo de residuos sólidos)
 
-## Resultado intermedio 3.2 Desarrollo del Producto Yamino, articulado a la Ruta Padre Abad"
+## Resultado intermedio 3.2
+
+## Desarrollo del Producto Yamino, articulado a la Ruta Padre Abad"
 
 ### Actividad 3.2.1. Implementación de experiencias turísticas en la CN
 
@@ -854,18 +813,20 @@ Exploración de la ruta de cacería y transito de personas entre San Martín y L
 
 #### 3.2.3.2 Difusión de las experiencias implementadas
 
-## Resultado intermedio 3.3 Desarrollo de iniciativas y emprendimientos turísticos locales"
+## Resultado intermedio 3.3
+
+## Desarrollo de iniciativas y emprendimientos turísticos locales"
 
 ### Actividad 3.3.1. Acondicionar los recursos turísticos en la ZA
 
 #### 3.3.3.1 Mejora de infraestructura
 
-**Actividades en el Sector Tocache.** En este trimestre en mejoras de infraestructura, se logró la instalación de letreros informativos, señaléticas, boletería, puntos ecológicos, vestidores, que ayudara a mejora el servicio al turista. También, se viene apoyando estructuras en proceso de construcción, en la Catarata del Otorongo.
+**Actividades en el Sector Tocache.** En este trimestre en mejoras de infraestructura, se logró la instalación de letreros informativos, señaléticas, boletería, puntos ecológicos, vestidores, que ayudara a mejora el servicio al turista. También, se viene apoyando estructuras en proceso de construcción, en la Catarata del Otorongo (@tbl-infraestructura).
 
 ```{r message = F, echo = F, eval= T}
 #| label: tbl-infraestructura
-#| tbl-cap: "fsdkjfdksfjkjdfs"
-setwd("U:/Reporte_PNCAZ/rda")
+#| tbl-cap: "Mejora de infraestructura para potenciar la actividad turìstica, en centros poblados de la ZA del PN Cordillera Azul, primer trimestre 2024"
+setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/rda")
 load("turismo_infraestructura.RDA")
 kable(tabla, format = "markdown", col.names = c("Comunidad", "Recurso", "Estructuras instaladas"), escape = FALSE) %>%
   kable_styling("striped", full_width = F)
@@ -873,7 +834,7 @@ kable(tabla, format = "markdown", col.names = c("Comunidad", "Recurso", "Estruct
 
 **Turismo Sostenible en el Centro Poblado Aguano Muyuna.** Se tuvieron reuniones con la comunidad para definir el tipo de apoyo que se brindará, así como a la asociación Agro Bio Agroforestal Yaku Kawsanap (ABAF) ([Anexo 3.3.3.1 - reporte Yacu Kawsanapa](https://docs.google.com/document/d/10Kx9Yh9r_ue-sscrPo1TeZEPq2BD47yH/edit?usp=sharing&ouid=113830731125206242650&rtpof=true&sd=true))
 
-**Evaluación de los Recursos Turísticos de la C.N. Callanayacu y del C.P. San Juan**. Se analizaron las condiciones para el desarrollo de las actividades turísticas en la Comunidad Nativa de Callanayacu – Chazuta, y el Centro Poblado de San Juan – Tres Unidos. Se ha identificado la necesidad de realizar saneamiento físico legal de los recursos turísticos, con la finalidad de gestionar las condiciones de visita a los recursos turísticos (instalaciones turísticas y equipamiento), a través de instituciones del estado y privados ([Anexo 3.3.3.1 - reporte CN Callanayacu - Chazuta](https://docs.google.com/document/d/1OMLaXLq968dLJ6m11mUIfyZHkqxZ4UQP/edit?usp=drive_link&ouid=113830731125206242650&rtpof=true&sd=true)).
+**Evaluación de los Recursos Turísticos de la C.N. Callanayacu y del C.P. San Juan**. Se analizaron las condiciones para el desarrollo de las actividades turísticas en la Comunidad Nativa de Callanayacu -- Chazuta, y el Centro Poblado de San Juan -- Tres Unidos. Se ha identificado la necesidad de realizar saneamiento físico legal de los recursos turísticos, con la finalidad de gestionar las condiciones de visita a los recursos turísticos (instalaciones turísticas y equipamiento), a través de instituciones del estado y privados ([Anexo 3.3.3.1 - reporte CN Callanayacu - Chazuta](https://docs.google.com/document/d/1OMLaXLq968dLJ6m11mUIfyZHkqxZ4UQP/edit?usp=drive_link&ouid=113830731125206242650&rtpof=true&sd=true)).
 
 En la Comunidad de Santa Rosa de la Cumbre, se realizó el diseño y se hizo la señalización de la Laguna de los Encantos, cerca de los centros poblados Nuevo Jaén (11 km) y Nuevo San Martín (12 km). Además de un letrero informativo sobre la Laguna de los Encantos ( @fig-encanto, @fig-señal, ver [Anexo 3.3.3.1 - Santa Rosa de la Cumbre](https://docs.google.com/document/d/13f9L4bHML-nsIX-xXrxHVUufraHvdLXt/edit?usp=sharing&ouid=113830731125206242650&rtpof=true&sd=true)).
 
@@ -919,7 +880,7 @@ Estas actividades están programadas a partir del tercer trimestre 2024.
 
 #### 4.1.2.1 Realizar el MUF (capacitación, materiales, guía, sistematización de la información, elaboración de cartillas y devolución a comunidades)
 
-El Mapeo de Usos y Fortalezas está programado para el 2026. En este contexto, se programarán actividades para la orgranización logística y técnica, a partir del 2025. Sin embargo, actualmente, se está organizando y revisando la información histórica de los MUFs realizados, años anteriores. Esto nos permitirá ajustar y mejorar la herramienta, con el objetivo de hacer un diagnóstico integral de los 20 años de intervención, así como canalizar las necesidades y fortalezas de las comunidades que participan, con las instituciones publicadas y privadas interesadas, en trabajar en la conservación de parque y la zona de amortiguamiento.
+El Mapeo de Usos y Fortalezas está programado para el 2026. En este contexto, se programarán actividades para la orgranización logística y técnica, a partir del 2025. Actualmente, se está organizando y revisando la información histórica de los MUFs realizados, años anteriores. Esto nos permitirá ajustar y mejorar la herramienta, con el objetivo de hacer un diagnóstico integral de los 20 años de intervención. El objetivo es que la información generada, ayude a canalizar las necesidades y fortalezas de las comunidades nativas y centros poblados, con las instituciones publicadas y privadas que desarrollan proyectos en la ZA del parque.
 
 #### 4.1.2.2. Establecimiento de bosques locales (Expediente técnico, incidencia en Munic y seguimiento)
 
@@ -1010,16 +971,16 @@ Entre los logros resaltan en Tarapoto, el apoyo de CIMA-SERNANP en la coordinaci
 ```{r include = TRUE, message = FALSE, echo = FALSE}
 #| label: tbl-hitos
 #| tbl-cap: "Hitos logrados en el marco de la implementación de las prioridades del PCV, en la ZA del PN Cordillera Azul, en el primer trimestre 2024"
-setwd("U:/Reporte_PNCAZ/rda")
+setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/rda")
 load("resumen_implementados2024.RDA")
-implementados<-implementados %>%
+implementados<-implementados |>
   mutate(Sede = ifelse(duplicated(Sede), "", Sede),
          Comunidad = ifelse(duplicated(Comunidad), "", Comunidad))
-implementados %>%
-  mutate(Hito = sprintf('<a href="%s" target="_blank">%s</a>', Link, Hito)) %>%
+implementados |>
+  mutate(Hito = paste0("[", Hito, "](", Link, ")")) |>
   select(-Link) %>%  # Eliminar la columna de URLs
-  kable(format = "html", escape = F) %>%
-  kable_styling("striped", full_width = F) %>%
+  kable(format = "markdown", escape = F) |>
+  kable_styling("striped", full_width = F) |>
   row_spec(0, bold = TRUE, color = "black")
 ```
 
@@ -1030,3 +991,354 @@ implementados %>%
 #### 4.2.4.1 (articular) Curso para líderes y autoridades comunales
 
 #### 4.2.4.2 Elaboración de manual orientativo (incluye asesoría)
+
+::: callout-important
+## Ambas sub-actividades están programadas a partir del tercer trimestre 2024.
+:::
+
+## Resultado 5.
+
+## Se contribuye a la mejora de la calidad de vida de las poblaciones vecinas a través del desarrollo de actividades económicas sostenibles en la ZA compatibles con la conservación del PNCAZ y la restauración de la ZA
+
+## Resultados intermedio 5.1
+
+## Se generan acuerdos de conservación con poblaciones indígenas y locales; incluyendo autoridades para la gestión integral del territorio (PNCAZ -- ZA)
+
+### Actividad 5.1.1. Promoción y suscripción de acuerdos de conservación (organizaciones) y acuerdos azules (comunales)
+
+#### 5.1.1.1 Actividades preparatorias para la elaboración de los acuerdos de conservación (AdC)
+
+En este trimestre no se firmó acuerdo de conservación, pero si se realizó actividades de socialización con centros poblados y organización, del centro poblado de San José de Yanayacu, en Tarapoto. Así como, en las comunidad nativas La Cumbre, Manco Capac, Isolaya y La Libertad y los centros poblados Fernando Belaunde Terry y Nuevo San Martín, en Contamana ([Anexo 5.1.1.1 - ver informe](https://drive.google.com/drive/folders/19jjzedSHOKze-D_Op5XTU5lj3hpYgnq3?usp=sharing)). La firma de acuerdos, se ha programado para el siguiente trimestre.
+
+En el sector Tocache, se informó a las comunidades de Buenos Aire, Cachiyacu, San José de Huaquisha, sobre los acuerdos de conservación y su importancia. Estas comunidades ya cuentan con Planes de Calidad de Vida, y se está apoyando la implementación de prioridades. De igual menera, se socializó los Acuerdos de Conservación a las Agricultores interesados en la conservación de la microcuenca Picota, en el distrito de Pólvora ([Anexo 5.1.1.1 - reunion informativa](https://drive.google.com/drive/folders/162lOwBN0norQSjwbR5vCHitXU3ECUrHO?usp=sharing))
+
+#### 5.1.1.2  Evento para la firma del AdC
+
+#### 5.1.1.3 Elaboración de planes de trabajo
+
+En la sede Tocache, este trimestre se elaboraron tres planes de trabajo, en el marco de los acuerdos de conservación con la cooperativa Agraria nueva visión LTDA, que es encuentra en el centro poblado de Cachiyacu, y la Cooperativa de servicios especiales Bioaltura LTDA y a la Empresa cacaotera ARGE S.A.C, en el centro poblado Maronilla.
+
+#### 5.1.1.4. Fortalecimiento de capacidades de los Promotores locales
+
+## Resultados intermedio 5.2 En la ZA del PNCAZ se desarrollan actividades económicas sostenibles
+
+### Actividad 5.2.1. Elaboración de la Estrategia de Actividades Económicas Sostenibles
+
+#### 5.2.1.1. Reuniones y Talleres para la elaboración de la Estrategia AES (incluye facilitador)
+
+Este trimestre se desarrollaron reuniones de trabajo entre SERNANP y el equipo de CIMA, de la sede Tarapoto, para elaborar la estrategia de actividades económicas sostenibles. Un borrador de esta estrategia está actualmente siendo revisada ([ver Anexo 5.2.1.1](https://drive.google.com/drive/folders/10eirJcQ2EotB3zuZYlSVg3Juv8rhUxI9?usp=sharing)).
+
+### Actividad 5.2.2. Implementación de actividades sostenibles derivadas de la planificación estratégica -- PCV. (FOTP y fondo semilla)
+
+#### 5.2.2.1 FOTP (para comunidades con PCV)
+
+Este trimestre, a través del Fortalecimiento Organizacional Técnico Productivo (FOTP) se atendieron un total de 16 comunidades; nativas y centros poblados. En las comunidades que cuentan con PCV, se atendieron 14 comunidades; que representan 16 organizaciones; las cuales trabajan nueve distintos productos y servicios; como el café, cacao, artesanías y turísmo, entre los más importantes. En este marco, se lograron concretar 21 hitos o logros, del trimestre, los cuales corresponden a capacitaciones, manejo sostenible de las chacras, actividades de restauración y turísmo, entre otros. De igual forma, el FOTP es realizado con aquellas comunidades sin PCV, pero que han formado comités interesados en recibir asistencia de CIMA y realizar actividades de fortalecimiento organizacional. Al cierre de este trimestre, las actividades lograron beneficiar cerca de 200 socios, de las organizaciones participantes ([Anexo 5.2.2](https://drive.google.com/drive/folders/1YSwuCkLd3D9HIhSVmdZfE_FJZwH4BYUI?usp=sharing)).
+
+```{r echo=F, include=T}
+#| label: tbl-fotp
+#| tbl-cap: "Número de sectores, comunidades, organizaciones, productos, hitos logrados y prioridades atendidas, en el marco del FOTP, durante el primer trimestre 2024"
+# datos
+load("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/rda/fotp_t1_2024.RDA")
+# organizar tabla
+fotp$`N° de socios(as)`<- as.numeric(fotp$`N° de socios(as)`)
+tabla_resumen_pcv <- fotp |>
+  group_by(Sub_actividad) |>
+  filter(Año==2024) |>
+  summarize(
+    numero_sectores = n_distinct(Sector),
+    numero_comunidades = n_distinct(`Comunidad (es)`),
+    numero_organizaciones = n_distinct(Organización),
+    numero_productos = n_distinct(`Producto / Servicio`),
+    numero_hitos_logrados = n_distinct(`Hito obtenido (estos son los hitos del trimestre)`),
+    numero_prioridades = n_distinct(`Nombre de la prioridad`)
+)
+# presentar tabla
+test<-as.data.frame(t(tabla_resumen_pcv))
+colnames(test)<-NULL
+rownames(test)<-c("Resultados", "n°sectores", "n°comunidades", "n°organizaciones",
+                  "n°productos", "n° hitos logrados", "n°prioridades")
+kable(test, format = "markdown", escape = FALSE) |>
+  row_spec(1, bold = TRUE, background = "lightgrey") %>%  # Encabezado en negrita
+    kable_styling("striped", full_width = F)
+```
+
+##### revisar contamanas:
+
+**CO-03: Asociación Agrícola y Forestal del Insaya de Nvo Dorado**
+
+Se implemento realizando análisis de suelo en las parcelas de los socios, lo cual fueron enviados al laboratorio de la Universidad Agraria la Molina. Se trabajo la injertacion de plantones para mejorar las plantaciones de 21 socios; también se realizo un taller en técnicas de poda (formación y mantenimiento).
+
+**CO-04:** **Asociación de Agricultores, Reforestadores y Manejo Sostenible del Aguaje (AGROSAN).**
+
+Se inicio el trimestre realizando la verificación del sembrío de plátano que se hicieron el año pasado, que servirá como sombra temporal en la plantación de cacao. Se hicieron capacitaciones en poda de formación y de mantenimiento, como tambien capacitación en técnicas de sembrado (tres bolillo y cuadrado).
+
+Se esta tratando de conseguir semillas de cacao para realizar los recalces de algunos que no germinaron, y varas yemeras para la injertacion de plantones óptimos.
+
+**Aguaytía:**
+
+En la CN de Santa Rosita de Apua, se ha instalado de 3 hectáreas de cacao bajo sistema agroforestal, también se ha instalado 3 ha de plátano como sombra temporal del cacao.
+
+En la CN Yamino, se han instalado 2 puertas de la planta chocolatera de la Asociación de Artesanas Kari Isa Xanu de Yamino, también se apoyó en el traslado de las máquinas para la elaboración de masa y chocolates de cacao a la planta chocolatera, estás máquinas fueron adquiridas por la asociación en marco a la ejecución del Plan de Emprendimiento y Empoderamiento Económico de la Mujer - PEEM 2022, titulado "Implementación de tecnologías apropiadas, fortaleciendo el conocimiento del proceso de transformación del cacao a pasta de cacao y chocolates de las mujeres indígenas de la Asoc. de Artesanas Kari Isa Xanu de Yamino" de Agroideas.
+
+#### 5.2.2.2 Fondo Semilla para aquellas organizaciones que deriven de la planificación comunal (CCNN o CCPP con PCV) o con un Plan de acción producto de FOTP
+
+En este trimestre se realizaron actividades de coordinación y desarrollo de 11 proyectos, en el marco del fondo semilla. Tres de los cuales, han sido aprobados este primer trimestre 2024, por un monto de 60 mil soles. Estos proyectos podrán beneficiar a 62 familias, de los centros poblados Vista Alegre, Santa Rosa y Nuevo Arica. A la fecha, se ha realizado el primer desembolso en efectivo, por un monto de 30 mil soles, cada uno. De igual manera, se realizó la elaboración de cuatro proyectos de los centros poblados de Consuelo, Bajo Chimbote, Inca Huasi de la Sede Tocache y Lejía de la Sede Tarapoto; los cuales están siendo evaluados para su aprobación y desembolso, el siguiente trimestre. Finalmente, se apoya a cuatro comunidades en la formulación de proyectos, los cuales serán evaluados por los especialistas de CIMA-SERNANP, en los próximos meses (@tbl-fs).
+
+```{r include=T, echo=F, message=F}
+#| label: tbl-fs
+#| tbl-cap: "Apoyo a Organizaciones de Centros Poblados y Comunidades Nativas para pequeñas inversiones en la ZA, en el primer trimestre 2024. En el marco del Fondo Semilla Emprendedores por Cordillera Azul-2024"
+setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/rda")
+load("fondo_semilla_T1-2024.RDA")
+fstable<-fs|>
+  select(Sede,Año_n, Año, Comunidad,Organizaciones, Codigo_fs, N_Familias, 
+         Tipo_apoyo, Producto, Periodo_meses, Primer_desembolso,
+         Trimestre_primer.desembolso, Segundo_desembolso,Año_segundo_desembolso, 
+         Trimestre_primer.desembolso2) |>
+  filter(Año==2024) |>
+  select(Sede,Comunidad,Organizaciones,Codigo_fs,N_Familias, Tipo_apoyo, Producto,Periodo_meses, Primer_desembolso) |>
+  arrange(Sede) |>
+  mutate(Sede = ifelse(duplicated(Sede), "", Sede))
+
+kable(fstable, format = "markdown", col.names = c("Sede", "Comunidad","Organizaciones","Codigo FS","familias","Tipo de apoyo","Producto", "Duración del proyecto","Primer desembolso"), table.attr = "class='table table-bordered'") |>
+    kable_styling(bootstrap_options =c("striped","hover"), full_width = F) |>
+    row_spec(0, bold = TRUE, color = "black") |>
+    row_spec(c(1, 2), background = "#CCCCFF")|>
+    row_spec(c(3,4,5,6,7), background = "#FFCC99") |>
+    row_spec(c(8,9,10,11), background = "#99FF99")
+```
+
+**Seguimiento a los proyectos del fondo semilla.** Se continúa con el seguimiento de los proyectos financiados, entre el 2022 y 2023. Es así que, se ha solicitado la ampliación de plazo para culminar proyectos del fondo semilla, y se ha realizado el cierre de 2 proyectos ([Anexo 5.2.2.2 - lista y detalle de proyectos](https://docs.google.com/spreadsheets/d/1xsC_5Ip56avDkQrDvzPztdKvwu1i75hG/edit?usp=sharing&ouid=113830731125206242650&rtpof=true&sd=true)).
+
+**Capacitación a la asociación del Comité de Productores de Flor de Café.** Entre el 14 y 15 de marzo, se realizó un taller de calibración de despulpadora de café , contando con la presencia de 19 socios y el equipo técnico, evento realizado en el marco del Fondo semilla ([Anexo 5.2.2.2 - informe del taller](https://drive.google.com/drive/folders/1TmHOnkxZXw6FtKSLYw1EdoCovAwwfaq7?usp=drive_link)).
+
+**Fondo Semilla 11 -- Asociacion de Artesanas BIRIYAKA**
+
+Durante el primer trimestre se implementó a la casa de artesanas con un kit solar, refacciones y pintado de la fachada con iconografía shipiba. Tambien se realizó una capacitación a las socias en temas de manejo y mantenimiento de máquina de coser, como tambien en técnicas para un mejor acabado de sus telares.
+
+En reunion con las socias se estableció la fecha para la inauguración de la casa de artesanas, quedando asi para el 17 de abril.
+
+**Fondo Semilla 13 -- Asociación Agrícola y Forestal del Insaya de Nvo Dorado**
+
+Se implemento en la compra de maquinaria para el aprovechamiento de la bolaina, como 1 cubota (Motocultor), 2 motosierras STIHL Ms 661, además se realzo un taller de capacitación en el uso y mantenimiento de las maquina entregadas, tipos de corte de la madera y tablilleo.
+
+#### 5.2.2.3 Monitoreo y evaluación de FOTP y fondo semilla (incluye el análisis de la implementación)
+
+### Actividad 5.2.3. Alianzas con socios estratégicos para el desarrollo de actividades productivas identificadas (a través FOTP, y concursable).
+
+Este trimestre, se realizaron coordinaciones con la sede central de SERNANP, en Lima, para realizar la socialización de la marca Aliados por la Conservación, a las Cooperativas Allima Cacao (sede Tarapoto) y Cooperativa Nueva Visión (sede Tocache) (ver detalle en [Anexo 5.2.3](https://drive.google.com/drive/folders/1nWaisJ8r_FebmQaUy5ff0ihoTny_2Cqx?usp=sharing)). De igual manera, Se participó en reunión con la Municipalidad de Chazuta donde se socializó la Creación de Consejo Consultivo de Turismo y Cultura del Distrito de Chazuta (ver detalles en el [Anexo 5.2.3 - ayuda memoria](https://docs.google.com/document/d/1C0pf5_ZPApqdZru1q5VYG1B33EWxc3L0/edit?usp=sharing&ouid=113830731125206242650&rtpof=true&sd=true)).
+
+#### 5.2.3.1 Priorización de CCNN/CCPP y organizaciones
+
+#### 5.2.3.2 Fortalecimiento Organizacional Técnico Productivo (no cuentan con PCV)
+
+En el ambito de la sede Contamana, se mantuvo reuniones con los miembros del Comité de Artesanas Canan Kenna de Santa Rosa de Piro Cocha, donde los socios manifestaron que necesitan un local para sus reuniones y elaborar sus productos, y que estos tambien les sirva para sus ventas. Tambien manifestaron que necesitan apoyo en la venta de sus productos, articular a un mercado y participación en ferias.
+
+En la sede Tocache, se actualizó el plan de acción de la asociación de Productores Cacaoteros la Perla del Valle del Aspuzana. ára este año 2024. Además, se dió 218 asistencias técnicas a los agricultores que proveen de granos de cacao a la planta de acopio de cacao. La asistencia técnica se desarrolló en podas de mantenimiento, control fitosanitarioy remoción de frutos; que fueron realizadas con las comunidades del Valle del Aspuzana (Caimito, los olivos, vista alegre, Maronilla, Jorge Basadre, Consuelo, Gosen, la Loma, Esperanza).
+
+#### 5.2.3.3 FOTP en Aspuzana (incluye el piloto)
+
+#### 5.2.3.4 Fondo Concursable Emprendedores por CA
+
+**Fondo Concursable "Emprendedores por Cordillera Azul" - Primera Edición.** dirigido a Comunidades Nativas. Se apoyó en la elaboración del Contrato de donación para que sean firmados por las organizaciones ganadoras. Se sostuvo reunión con las organizaciones ganadoras en modo presencial y virtual para socializar el acuerdo de conservación y asesorarles en la documentación a firmar para la gestión de los desembolsos.
+
+**Fondo Concursable "Emprendedores por Naturaleza, PN Cordilerra Azul- Segunda Edición.** Se sostuvo reuniones virtuales con representantes de Sernanp -- CIMA y profesionales de Sernanp Lima para hacer las bases de la segunda edición, posters, formatos para el concurso, para lo cual, e lanzamiento se realizará el 4 de abril a nivel nacional junto con todos los fondos de Emprendedores por Naturaleza ([Anexo 5.2.3.4](https://drive.google.com/drive/folders/1uquPIXD7bkUMma9sO1p1lw3HcbIr80D-?usp=sharing)).
+
+#### 5.2.3.5 Evaluación y monitoreo del FOTP y Fondo Concursable Actividad
+
+### 5.2.4. Implementación del Fondo de Inversión Social
+
+#### 5.2.4.1 Identificación de cadenas de valor para realizar nuevas inversiones en la ZA
+
+#### 5.2.4.2 Elaboración de planes de negocio (nuevas inversiones)
+
+#### 5.2.4.3 Evaluación de la Planta Aspuzana (inlcuye gestión técnica y financiera)
+
+#### 5.2.4.4 Seguimiento a la inversiones realizadas (Kulkao y las nuevas que se realicen)
+
+Respecto a los resultados de la parte financiera sobre la inversión que se ha efectuado, otorgando capital de trabajo a la empresa KULKAO para que puedan comprar granos de café y cacaco a los agricultores de la ZA del PNCAZ, en los sectores donde ellos operan, podemos informar lo siguiente:
+
+Las operaciones financieras proyectadas se vienen llevando a cabo cumpliendo KULKAO con lo estipulado, logrando durante este periodo cobrar en marzo 2024, la suma de **US\$8,076.92** de interés. incrementando esta suma al interés de US\$122,780 logrado hasta fines de este año 2023 en favor de las operaciones del PNCAZ en el marco de los tres convenios de préstamo con KULKAO.
+
+En marzo de este año KULKAO ha cumplido también en pagar la cuarta amortización de **US\$46,153.85** de las trece programadas en el tercer convenio, quedando un capital de **US\$415,384.60** aún por amortizar, de los **US\$600,000** prestados.
+
+El tercer convenio, de acuerdo a los términos suscritos, Kulkao debe continuar sus operaciones hasta mediados de junio 2026, proyectándose que de enero a junio 2024 generar las operaciones de devolución del capital restante, así como los respectivos intereses.
+
+#### 5.2.4.5 Funcionamiento de la Planta de Postcosecha del Aspuzana
+
+En este primer trimestre del 2024 la cantidad procesada de cacao seco ha sido de 21.48 toneladas. Para este año 2024, tanto el Gerente de la Planta así como el responsable de las Operaciones Técnicas de la Planta, proyectaron acopiar 192 t de cacao
+
+En cuanto a la comercialización del cacao procesado en la planta del Aspuzana, este 1er.trimestre se han vendido 02 lotes de cacao a la empresa ALMENDRA PERU S.A.C el 05 de febrero por 14 t., y a la empresa MACHU PICCHU FOODS el 21 de febrero por 3 t., por lo que al final del primer trimestre 2024, después de un inventario físico llevado a cabo bajo la supervisión del Gerente de la Planta, se informa que, en almacén, losas, y cajones de fermentación de la planta se mantiene un lote equivalente de 10 t de cacao seco ([ver Anexo 5.2.4.3 - informe Planta Aspuzana](https://docs.google.com/document/d/1H-dEDB8BT0hVN_AxjI3TfIHT2fEKKrHh/edit?usp=drive_link&ouid=113830731125206242650&rtpof=true&sd=true)).
+
+Adicionalmente, se informa que este pormer trimestre 2024, se efectuaron los reportes técnicos y financieros con cierre a diciembre 2023 del Proyecto MiCacao para los Helvetas, quedando pendientes algunas actividades que deberán de llevarse a cabo hasta fines de junio 2024. Los cuales son, un taller de refuerzo para el manejo del aplicativo a los 100 agricultores involucrados en el Proyecto MiCacao, así como el desarrollo del programa que ayudará a sistematizar la información que se genera en la planta, tanto del cacao convencional como el proveniente de las parcelas calificadas sin deforestación.
+
+### 5.2.5. Desarrollo y aplicación de la marca Aliados por la Conservación
+
+::: callout-important
+## No se reportaron actividades este trimestre.
+:::
+
+## Resultados intermedio 5.3
+
+## En la ZA se gestionan espacios de conservación, manejo y restauración del bosque que coadyuvan a la gestión del PNCAZ bajo el enfoque integral de paisajes
+
+### 5.3.1. Implementación de iniciativas de conservación en la ZA
+
+::: callout-important
+## No se reportaron actividades este trimestre.
+:::
+
+#### 5.3.1.1 Implementación de bosques locales
+
+::: callout-important
+## No se reportaron actividades este trimestre.
+:::
+
+#### 5.3.1.2 Implementación de otras iniciativas de conservación (servicio de asesoría y visitas de campo)
+
+Se han realizado actividades de delimitación de iniciativas comunales para el establecimiento de bosques comunales, con la única finalidad de conservar los bosques de los centros poblados de Challual, Ruega a Dios y Puente La Juanita en el paisaje Ponazillo, y el centro poblado de Sangamayo en el paisaje Pauya.
+
+#### 5.3.1.3 Apoyo a la CC. Pauya Cushabatay
+
+#### 5.3.1.4 Visitas de campo y capacitaciones a Concesiones Forestales (incluye la coordinación con autoridad forestal)
+
+#### 5.3.2. Implementación de iniciativas de restauración ecológica en la ZA
+
+#### 5.3.2.1 Monitoreo de la restauración y uso de las áreas establecidas como áreas para pasantías (incluyen las hectáreas de bosque del quinquenio anterior)
+
+**Comunidades Nativas de Mariscal Cáceres, Santa Rosa de Aguaytía y Yamino.** Durante los meses de febrero y marzo se ha contratado a un consultor para realizar un diagnóstico del estado situacional de los viveros comunales y de las parcelas de restauración. ([Anexo 5.3.2.1 - ver informe](https://drive.google.com/drive/folders/1nhCfYIN9xXILAAHngAEnvc5Wn7t8l11G?usp=sharing)). También se ha realizado la limpieza y mantenimiento de los viveros comunales y se adquirió semillas de especies forestales de las CCNN de Santa Rosa de Aguaytía y Mariscal Cáceres.
+
+**Compartiendo experiencias de Restauración Ecológica del Paisaje.** Alumnos de la Maestría de la Maestría Conservación y Recursos Forestales de la Universidad Agraria la Molina, visitaron la comunidad nativa de Yamino, para conocer las experiencias de restauración, como parte de su curso de etnobiología.
+
+En las los centros poblados de San José de Huaquisha y Buenos aires, se realizó el monitoreo de plantulas de Tornillo. Se realizo el mantenimiento de las islas y conectores de restauración, este mantenimiento ayuda a que el área acelere su recuperación. Finalmente, se recibió la visita de los alumnos de la facultad de recursos naturales de la Universidad Nacional Agraria de la Selva; quienes fueron informados sobre los trabajos de restauración en la sede Tocache y el trabajo de gestión del parque, en la ZA ([Anexo 5.3.2.1-ver informe](https://drive.google.com/drive/folders/1F85FykX8zQAVQ289GSsXUFmywgKI1wm7?usp=sharing)).
+
+#### 5.3.2.2 Fortalecimiento de paisajes y àreas de restauración (proyecto Livelihood y proyecto ITTO)
+
+# Resultado 6
+
+# Se mantiene un flujo de fondos que permite el logro de los resultados comprometidos en el CdA"
+
+## Resultado intermedio 6.1
+
+## Se promueve la implementación de mecanismos financieros que contribuyen a la conservación del PNCAZ
+
+### Actividad 6.1.1 Aplicación a financiamiento de diversas fuentes/mecanismos.
+
+#### 6.1.1.1 Desarrollo de Prop. u otros Instrum. Financ.
+
+### Actividad 6.1.2 Coordinación y negociación con entidades de financiamiento
+
+#### 6.1.2.1 Reuniones con entidades de financ.
+
+### Actividad 6.2.1. Revalidación de LB y Verificación de Proyecto REDD (2021-2028)
+
+#### 6.2.1.1 Verificación VCS y CCB
+
+#### 6.2.1.2 Markit (Registro Anual)
+
+#### 6.2.1.3 Linea Base 2021-2024 y 25-28
+
+### Actividad 6.2.2. Comercialización de los créditos carbono del Proyecto REDD+ PNCAZ
+
+Se ha preparado una tabla con los VCUs del PNCAZ comercializados hasta fines de marzo 2024 basados en las cartas de autorización que SERNANP emite a solicitud de CIMA para su correspondiente comercialización ([Ver detalle en Anexo 6.2.2](https://drive.google.com/drive/folders/1mGDQUY1gn7cnm1KiT5TkvlMdcD8U4oO9?usp=drive_link)).
+
+En este trimestre sólo se ha comercializado 4,325 VCUs por un valor de US\$25,582 autorizados con la carta N°0001-2024-SERNANP-J-SGD, la misma que se muestra en la posición 33 de la Tabla adjunta, en el Anexo 6.2.2.
+
+Debe destacarse que a fines de marzo 2024 aún queda por cobrar a TOTALEnergies la última tercera parte del tramo B comercializado por US\$10'000,000. Este monto debe ser cancelado por TOTALEnergies una vez se lleve a cabo la evaluación de la implementación de la Hoja de Ruta.
+
+#### 6.2.2.1 Marketing para venta de VCUs
+
+#### 6.2.2.2 Estrategia de Comunicaciones (consultoría)
+
+### Actividad 6.2.3 Generación de rendimientos financieros de las actividades económicas sostenibles
+
+#### 6.2.3.1 Fondo a L.Plazo (y otras inversiones)
+
+# Actividades transversales
+
+### Actividad 1. Monitoreo de la Gestión
+
+#### 1.1 Monitoreo de la Gestión
+
+Este trimestre, se realizó una reunión de trabajo con el equipo del área de información, la Dirección de Monitoreo y Planificación, y la Dirección de Desarrollo Insitucional e Investigaciones. El objetivo fue de explicar el flujo de trabajo de Acuerdos de Conservación y Fondo Semilla, así como organizar las tablas de datos que se utilizan, para sistematizar mejor los reportes y realizar el seguimiento de las actividades ([Anexo 1.1 - informe](https://drive.google.com/drive/folders/12eYlU1iPqX-fgP7Ny1D1zFGZD5H8f5AZ?usp=sharing))
+
+#### 1.2 Creac.Opinión Publ.Favorable PNCAZ
+
+**Coordinación de actividades con AIDER.** La coordinación de la sede Aguaytía participó de una reunión de socialización por invitación del equipo de AIDER. Este presentó su nuevo Responsable Zonal de Padre Abad, Joel Mananita Urquia. Además, informaron de su programa "Bosques vivos para siempre" su modo de trabajo y las actividades que vienen desarrollando en las comunidades que tienen intervención. A su vez, CIMA informó de las actividades que desarrolla con las comunidades, en la ZA y dentro del PN Cordillera Azul, especialmente con las comunidades donde AIDER y CIMA desarrollan proyectos, en común. Otras instituciones también informaron las actividades que vienen realizando como el Ing. Edgardo Miranda Ruiz, de la Agencia Agraria que agradeció el apoyo de CIMA con la donación de plantones para el cumplimiento de sus actividades.
+
+**Reunión informativa con DEVIDA.** La coordinación de la sede Tarapoto; en representación del director (e) del programa partició en una reunión informativa con representantes de DEVIDA. Se intercambió información de los ambitos de intervención y los procesos que CIMA está implementado. El objetivo fue coordinar acciones conjuntas, en áreas de intervención común. DEVIDA se ha comprometido ha compartir información más detallada, en una próxima reunión.
+
+**Celebrando a los Pueblos Indígenas en ailsamiento y contacto inicial (PIACI).** Se participó en el evento "Presta tu voz a los PIACI" que se realizó en la Plaza Mayor de Aguaytía. Participaron diversas instituciones como la Federación Nativa de Comunidades Kakataibo, Instituto del Bien Común, Municipalidad Provincial de Padre Abad, AIDESEP, entre otros. El evento tuvo como finalidad, que la población conozca y se haga visible la existencia de los Pueblos Indígenas en situación de Aislamiento y Contacto Inicial -- PIACI. La sede Aguaytía-CIMA, resaltó la importancia de la existencia de los PIACI, ya que parte de ellos viven en armonía dentro del Parque Nacional Cordillera Azul y su Zona de Amortiguamiento.
+
+Además, se contó con a la presentación de raperos de la etnia Shipibo -- Conibo, la cantante Ruth Katina y la presencia del influencer Gianmarco Moreno. Finalmente se presenció el video: "Grompes, Curumi y la niña de la papaya" Cabe señalar que, esta actividad fue realizada por el Instituto del Bien Común -- IBC y la Federación Nativa de Comunidades Kakataibos -- FENACOKA.
+
+**Presentación del proyecto "Restauración del Paisaje Forestal".** En febrero del presente año, en el auditorio de hotel Costa del Sol, Pucallpa, se participó en la presentación del proyecto "Restauración del Paisaje Forestal en la Amazonia Peruana" de la empresa Form International Peru y Forma International Holanda. El proyecto en mención contempla dos componentes: 1, Plantación en núcleo y el 2, Programa con productores locales. Este proyecto se está ejecutando en el distrito de Campo Verde, provincia de Coronel Portillo -- región Ucayali.
+
+**Reunión informativa con la empresa Swisscontact.** En marzo, se realizó una reunión con los representantes de la empresa Swisscontact, Fundación Suiza de Cooperación para el Desarrollo Técnico. El Director del Programa de CIMA, Lorenzo Yzquierdo, expuso sobre la gestión del PNCAZ. El señor Alex Llanos de Swisscontact mencionó que ejecutarán un proyecto con enfoque de paisaje sostenible, en el corredor Tingo María-Pucallpa con fondos propios,.El periodo del proyecto será de 4 años (2025-2028); actualmente se está elaborando el proyecto e identificando instituciones para hacer sinergias. El proyecto a desarrollar estará relacionado a actividades productivas sostenibles, turismo, artesanías, entre otros.
+
+**Apoyo en la articulación de necesidades.** En el mes de febrero, la Comunidad Nativa Kichwa de Chipeza solicitó la participación de CIMA en una reunión informativa, con la finalidad de indicar el ambito de intervención de CIMA en la ZA respecto del PN Cordillera Azul. La comunidad ha solicitado el apoyo de CIMA para articular con otras dependencias del estado, para que puedan solicitar y atender sus necesidades. La comunidad nativa de Chipeza, se encuentra ubicada a la margen izquierda del río Huallaga, en el distrito de Chazuta. La primera comunicación recibida por CIMA, fue una solicitud de la comunidad para la señalización y letrerización del perímetro de su territorio comunal. Producto de esta reunión, se desarrollo una reuniòn con el ACR Cordillera Escalera y la municipalidad de Chazuta, para apoyar en la identificación y georreferenciación de los puntos críticos en el perímetro del territorio comunal. CIMA, está apoyando parte de las actividades logísticas.
+
+**Apoyo en actividades comprometidas con la gestión del parque.** A petición de los directivo del colectivo Chuya Chuya y de la municipalidad de Chazuta, se realizó una reunión para coordinar actividades a desarrollar en el manejo de residuos sólidos y el desarrollo de una planta de valorización. La municipalidad distrital elaborará una ficha técnica con los detalles para la construcción de la planta, que será entregado a CIMA-SERNANP para definir el apoyo que brindar
+
+**Representación institucional en el día del artesano.** En el mes de marzo y, atendiendo la invitación de la municipalidad distrital de Chazuta, participamos en las actividades conmemorativas por el día del artesano; actividad que nos ha permitido resaltar la importancia para la preservación de la cultura del distrito, el trabajo que los artesanos desarrollan.
+
+**Apoyo en la elanboración de una guía de planes de calidad de vida.** En el mes de marzo y atendiendo la invitación de la CODEPISAM, se ha participado de un taller para la revisión de la actualización de una guía para la elaboración de planes de vida en comunidades nativas de la región. Actividad que cuenta con el apoyo técnico y financiero del MINAM, a través del Programa Nacional de Conservación de Bosques. En el taller, CIMA sugirió que la metodología propuesta por los consultores, no propicia la reflexión de las comunidades en el proceso de construcción de su plan de vida, consideramos que la propuesta es una metodología en donde prima lo técnico, por lo que se sugirió que los planes de vida deben ser el producto de un proceso reflexivo y de construcción social de las propias comunidades.
+
+#### 1.3 Auditorías Externas
+
+::: callout-note
+Pendiente de reportar por la Dirección del Programa o direcciones correspondientes.
+:::
+
+#### 1.4 Auditorías Internas
+
+::: callout-note
+Pendiente de reportar por la Dirección del Programa o direcciones correspondientes.
+:::
+
+#### 1.5 Fortalecimiento Interno
+
+**Manipulación y aplicación de suero antiofídico e inyectables generales, en la sede Tarapoto.** Se ha desarrollado una jornada de capacitación dirigido al equipo técnico de campo, para la correcta aplicación de inyectables, así como la adecuada manipulación y aplicación de sueros antiofídicos. En esta jornada, también participó el personal administrativo de la sede, así como los especialistas de jefatura. La capacitación fue dirigida por dos profesionales del área de salud, con amplia experiencia en el tema.
+
+**Capacitación en primeros auxilios, en la sede Tocache.** Se realizo una capacitación de Primeros auxilias para el equipo de campo guardaparque y técnicos. La capacitación fue realizada por el personal de Hospital de Tocache; los cuales explicaron el procedimiento y atenciones que el personal de tener frente a los accidentes ofídicos y mordedura de arañas; como los primeros auxilios, intoxicaciones o envenenamiento. Primeros auxilios en mordedura de araña ([Anexo actividad 1.5 - ver informe](https://drive.google.com/drive/folders/1XNl67dkUJByxpLL1Joa2FNpVbT6Av93d?usp=sharing))
+
+#### 1.6 Planificación del Programa
+
+::: callout-warning
+## No se ha reportado nada aquí. Confirmar.
+:::
+
+#### 1.7 Lista Verde
+
+::: callout-warning
+## No se ha reportado nada aquí. Confirmar.
+:::
+
+#### 1.8 Salud Ocupacional
+
+::: callout-warning
+## No se ha reportado nada aquí. Confirmar.
+:::
+
+#### 1.9 Asesoría Legal tema Kichwas
+
+::: callout-warning
+## No se ha reportado nada aquí. Confirmar.
+:::
+
+### Actividad 2. Participación en Plataformas y Mesas Técnicas
+
+Participación en el taller macro regional para la actualización de la Estrategia Nacional de Diversidad Biológica, organizado por el MINAM, y en donde se han socializado los indicadores que permitirán medir los avances en la implementación de la estrategia en mención.
+
+Participación en la primera reunión ordinaria de la Comisión Ambiental regional de San Martín, en donde la secretaría técnica de esta plataforma ha socializado los avances en la implementación de los diferentes instrumentos de gestión ambiental de la región. Por nuestra parte, solicitamos la reactivación de los grupos técnicos conformados al interior de la CAR, así como la descentralización de las reuniones, con la finalidad de asegurar la participación de los además actores de la región. La solicitud fue aceptada, y en una reunión virutal, se dejó de manifiesto la intención de CIMA, de continuar en la coordinación del grupo técnico de restauración ecológica. Adicionalmente, se propuso que cada uno de los grupos, en la comisión ambiental, debería proponer un plan de trabajo a implementarse en el transcurso del año.
+
+**Comisión ambiental Municipal-Tocache.** Se socializó a la CAM los resultados del inventario local de gases de efecto invernadero, en marco a la formulación del Plan local de Cambio Climático, de la provincia de Tocache. Producto de esta reunión se acordó elaborar un análisis de riesgo, de la provincia, para la formulación de las medidas de adaptación al cambio climático. CIMA se ha comprometido con el ARA San Martín a desarrollar reuniones de trabajo, para este fin ([Anexo actividad 2.1](https://drive.google.com/drive/folders/1Kb9g65qNkZHOzG6VHACsIiPh_gdZVmIE?usp=sharing)).
+
+### Actividad 3. Difusión y diseminación de experiencias
+
+#### 3.1 Comunicación Prog.(materiales y diseños)
+
+Durante el primer trimestre del 2024, el equipo de comunicaciones e incidencia pública de CIMA se centró en anunciar a los ganadores del fondo concursable "Emprendedores por Cordillera Azul", y en coordinar el lanzamiento de la segunda edición del concurso "Emprendedores por Naturaleza -- Parque Nacional Cordillera Azul", en colaboración con el Sernanp. Además, se dio inicio a la elaboración del [Plan de Comunicaciones e Incidencia Pública de CIMA]{.smallcaps} y a la Estrategia de Comunicaciones del PNCAZ. Estos procesos se fortalecieron con reuniones internas con las sedes regionales de Aguaytía, Contamana, Tarapoto y Tocache, así como con la Jefatura del PNCAZ y Comunicaciones del SERNANP.
+
+Por otro lado, el equipo de comunicaciones se ha encargado del seguimiento y recolección de información para la presentación y envío del segundo reporte del proceso de implementación de la Hoja de Ruta (HdR) sobre Criterios de Ambiente, Sostenibilidad y Gobernanza (ASG) y Derechos Humanos para el Proyecto REDD+ del Parque Nacional Cordillera Azul, consensuado entre CIMA y Total Energies Nature-Based Solutions (TENBS), desde una perspectiva de comunicación estratégica e incidencia pública.
+
+Se ha continuado con la difusión de actividades de difusión de los procesos sociales que se realizan en el parque y la ZA. La producción de notas, diseños, audios, desarrollados este trimestre, se detallan en el [Anexo 3.1](https://drive.google.com/drive/folders/1P4cuaNti8Mr3EhxObgTN_546pltsmqvG?usp=drive_link).
