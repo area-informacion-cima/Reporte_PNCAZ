@@ -38,6 +38,12 @@ library(knitr)
 library(kableExtra)
 ```
 
+# I. RESUMEN
+
+# II.
+
+# EVALUACIÓN DEL CUMPLIMIENTO DE ACTIVIDADES Y RESULTADOS DEL CONTRATO DE ADMINISTRACIÓN
+
 # Resultado 1:
 
 # Se mantiene el estado de conservación del PNCAZ
@@ -1347,3 +1353,17 @@ Durante el primer trimestre del 2024, el equipo de comunicaciones e incidencia p
 Por otro lado, el equipo de comunicaciones se ha encargado del seguimiento y recolección de información para la presentación y envío del segundo reporte del proceso de implementación de la Hoja de Ruta (HdR) sobre Criterios de Ambiente, Sostenibilidad y Gobernanza (ASG) y Derechos Humanos para el Proyecto REDD+ del Parque Nacional Cordillera Azul, consensuado entre CIMA y Total Energies Nature-Based Solutions (TENBS), desde una perspectiva de comunicación estratégica e incidencia pública.
 
 Se ha continuado con la difusión de actividades de difusión de los procesos sociales que se realizan en el parque y la ZA. La producción de notas, diseños, audios, desarrollados este trimestre, se detallan en el [Anexo 3.1](https://drive.google.com/drive/folders/1P4cuaNti8Mr3EhxObgTN_546pltsmqvG?usp=drive_link).
+
+# III.
+
+# RELACIÓN ACTUALIZADA DE EMPLEADOS Y PERSONAL, EQUIPO CLAVE DEL CONTRATO DE ADMINISTRACIÓN Y FUNCIONES QUE REALIZAN
+
+Se adjunta en Anexo III la relación de personal de CIMA, equipo clave del Contrato de Administración con la descripción de sus funciones, según en la Resolución Directoral N° 045-2017-SERNANP-DGANP. Durante el Primer Trimestre 2024, se dieron los siguientes cambios de personal:
+
+# IV.
+
+# DE LAS COMISIONES DE SEGUIMIENTO Y/O SUPERVISIÓN
+
+# ANEXOS
+
+Los anexos que acompañan este primer reporte trimestral, se adjuntan en la carpeta drive, denominada "[Reporte_Trimestral 2024](https://drive.google.com/drive/folders/12cFhl76nPCkcn6lz2pEbSQUl5gCC0QHt?usp=drive_link)". Los anexos, se organizan están organizados, según los Resultados, de acuerdo con la estructura programática para el quinquenio 2024 - 2028.
