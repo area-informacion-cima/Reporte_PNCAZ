@@ -40,9 +40,7 @@ library(kableExtra)
 
 # I. RESUMEN
 
-# II.
-
-# EVALUACIÓN DEL CUMPLIMIENTO DE ACTIVIDADES Y RESULTADOS DEL CONTRATO DE ADMINISTRACIÓN
+# II. EVALUACIÓN DEL CUMPLIMIENTO DE ACTIVIDADES Y RESULTADOS DEL CONTRATO DE ADMINISTRACIÓN
 
 # Resultado 1:
 
@@ -1354,9 +1352,7 @@ Por otro lado, el equipo de comunicaciones se ha encargado del seguimiento y rec
 
 Se ha continuado con la difusión de actividades de difusión de los procesos sociales que se realizan en el parque y la ZA. La producción de notas, diseños, audios, desarrollados este trimestre, se detallan en el [Anexo 3.1](https://drive.google.com/drive/folders/1P4cuaNti8Mr3EhxObgTN_546pltsmqvG?usp=drive_link).
 
-# III.
-
-# RELACIÓN ACTUALIZADA DE EMPLEADOS Y PERSONAL, EQUIPO CLAVE DEL CONTRATO DE ADMINISTRACIÓN Y FUNCIONES QUE REALIZAN
+# III. RELACIÓN ACTUALIZADA DE EMPLEADOS Y PERSONAL, EQUIPO CLAVE DEL CONTRATO DE ADMINISTRACIÓN Y FUNCIONES QUE REALIZAN
 
 Se adjunta en Anexo III la relación de personal de CIMA, equipo clave del Contrato de Administración con la descripción de sus funciones, según en la Resolución Directoral N° 045-2017-SERNANP-DGANP. Durante el Primer Trimestre 2024, se dieron los siguientes cambios de personal:
 

@@ -571,8 +571,66 @@ kable(n_pat, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
   kable_styling("striped", full_width = F)
 
 
+### Crear un Script para Extraer los Hipervínculos #######
+library(xml2)
+library(rvest)
+library(dplyr)
 
 
+
+
+
+# Leer el archivo .qmd como texto
+qmd_content <- readLines("index.qmd")
+
+# Convertir el contenido a un solo string
+qmd_content <- paste(qmd_content, collapse = "\n")
+
+# Añadir la estructura mínima de HTML para poder leerlo con xml2
+qmd_content_html <- paste0("<html><body>", qmd_content, "</body></html>")
+
+# Analizar el contenido HTML
+qmd_html <- read_html(qmd_content_html)
+
+
+# Extraer hipervínculos
+hyperlinks <- qmd_html %>%
+  html_nodes("a") %>%
+  html_attr("href")
+
+# Extraer texto de los hipervínculos
+link_text <- qmd_html %>%
+  html_nodes("a") %>%
+  html_text()
+
+# Crear un data frame con los hipervínculos y su texto asociado
+hyperlinks_df <- data.frame(text = link_text, link = hyperlinks, stringsAsFactors = F)
+
+# Mostrar los hipervínculos
+print(hyperlinks_df)
+
+
+###############
+### tercera opción crear una tabla de Anexos e hipervínculos ###
+### Esta funcionó ####"
+
+# Abrir la librería 
+library(stringr)
+
+# Leer el archivo .qmd como texto
+qmd_content <- readLines("index.qmd")
+
+# Definir la expresión regular para extraer los hipervínculos
+regex <- "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+
+# Extraer todos los hipervínculos y sus textos
+matches <- str_match_all(qmd_content, regex)[[1]]
+
+# Crear un data frame con los textos y los hipervínculos
+hyperlinks_df <- data.frame(text = matches[, 2], link = matches[, 3], stringsAsFactors = FALSE)
+
+# Mostrar los hipervínculos
+print(hyperlinks_df)
 
 
 
