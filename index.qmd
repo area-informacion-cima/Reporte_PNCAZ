@@ -41,7 +41,9 @@ library(kableExtra)
 
 **Resultado 1**
 
-Este primer trimestre se reportaron 186 patrullajes; 168 rutinarios y 18 especiales, en los 22 puestos de vigilancia. Además, 97 personas de 8 comunidades nativas y 28 centros poblados participaron en la vigilancia comunal (@fig-dist), junto con los guardaparques. La inversión realizada total, por este apoyo comunal fue de 62, 868 soles (@fig-apoyo), sólo en este primer trimestre; de los cuales 30 fueron mujeres y 67 varones (@fig-sexo).
+Este primer trimestre se reportaron 186 patrullajes; 168 rutinarios y 18 especiales, en los 22 puestos de vigilancia (@tbl-npat). De igual manera, a la fecha se cuenta con 61 casos vigentes en etapa de investigación (@fig-apoyolegal).
+
+Además, 97 personas de 8 comunidades nativas y 28 centros poblados participaron en la vigilancia comunal (@fig-dist), junto con los guardaparques. La inversión realizada total, por este apoyo comunal fue de 62, 868 soles (@fig-apoyo), sólo en este primer trimestre; de los cuales 30 fueron mujeres y 67 varones (@fig-sexo).
 
 El estado de conservación de la cobertura de bosque dentro del Parque, se mantiene intacta; en 1, 353, 141.06 hectáreas. Asimismo; 49.57 ha., se encuentran en recuperación dentro del parque; pues fueron afectadas por tala selectiva, extracción de madera y actividades ganaderas, que actualmente están controladas (@fig-ganadero,@fig-palomar). Además, se reportó 316.87 ha., de perdida natural de bosque.
 
@@ -103,9 +105,9 @@ Se trabajaron los Plan de Calidad de Vida, de las comunidades nativas Shipibo Ko
 
 Acuerdos de Conservación en la sede Tocache. Este trimestre se elaboraron tres planes de trabajo, en el marco de los acuerdos de conservación con la cooperativa Agraria nueva visión LTDA, la Cooperativa de servicios especiales Bioaltura LTDA y a la Empresa cacaotera ARGE S.A.C.
 
-A través del Fortalecimiento Organizacional Técnico Productivo (FOTP) se atendieron un total de 16 comunidades; nativas y centros poblados. En las comunidades que cuentan con PCV, se atendieron 14 comunidades; que representan 16 organizaciones; las cuales trabajan nueve distintos productos y servicios; como el café, cacao, artesanías y turísmo, entre los más importantes. En este marco, se lograron concretar 21 hitos o logros, del trimestre ( @tbl-fotp).
+A través del Fortalecimiento Organizacional Técnico Productivo (FOTP) se atendieron un total de 16 comunidades; nativas y centros poblados. En las comunidades que cuentan con PCV, se atendieron 14 comunidades; que representan 16 organizaciones; las cuales trabajan nueve distintos productos y servicios; como el café, cacao, artesanías y turísmo, entre los más importantes. En este marco, se lograron concretar 21 hitos o logros, del trimestre (@tbl-fotp).
 
-Se aprobaron tres fondos semillas, por un monto de 60 mil soles, cada uno. Además, se realizaron actividades de coordinación y apoyo técnico en la elaboración de 11 proyectos. Además, se ha concluído con la elaboración de cuatro proyecto, para los centros poblados de Consuelo, Bajo Chimbote, Inca Huasi y Lejía ( @tbl-fs). Estos deben ser evaluados para su aprobación el siguiente trimestre.
+Se aprobaron tres fondos semillas, por un monto de 60 mil soles, cada uno. Además, se realizaron actividades de coordinación y apoyo técnico en la elaboración de 11 proyectos. Además, se ha concluído con la elaboración de cuatro proyecto, para los centros poblados de Consuelo, Bajo Chimbote, Inca Huasi y Lejía (@tbl-fs). Estos deben ser evaluados para su aprobación el siguiente trimestre.
 
 Respecto de la inversión financiera en Kulkao, hasta el primer trimestre, abonó la suma total de US\$8,076.92 correspondiente al interés. Así también, la cuarta amortización de US\$46, 153.85 de los US\$600,000 prestados, por CIMA. Sin embargo, este trimestre, Kulkao no ha reportado la base de datos con el registro de agricultores beneficiarios, de esta actividad.
 
