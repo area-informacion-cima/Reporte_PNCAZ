@@ -38,7 +38,27 @@ library(knitr)
 library(kableExtra)
 ```
 
-# I. RESUMEN
+# I. RESULTADOS CLAVES
+
+Este primer trimestre se reportaron 186 patrullajes; 168 rutinarios y 18 especiales, en los 22 puestos de vigilancia. Además, 97 personas de 8 comunidades nativas y 28 centros poblados participaron en la vigilancia comunal, junto con los guardaparques. La inversión realizada total, por este apoyo comunal fue de 62, 868 soles, sólo en este primer trimestre; de los cuales 30 fueron mujeres y 67 varones.
+
+El estado de conservación de la cobertura de bosque dentro del Parque, se mantiene intacta; en 1, 353, 141.06 hectáreas. Asimismo; 49.57 ha., se encuentran en recuperación dentro del parque; pues fueron afectadas por tala selectiva, extracción de madera y actividades ganaderas, que actualmente están controladas. Además, se reportó 316.87 ha., de perdida natural de bosque.
+
+En la zona de amortiguamiento, 824.50 ha., de bosque fueron deforestados; siendo afectados 16 de los 18 sectores críticos de vigilancia; entre los anillos 1 y 5 km del parque. Los sectores críticos de vigilancia más afectados fueron los sectores Santa Ana, Ipururo, Pólvora y Shapaja. Además, fueron aperturados 6.39 km de trochas, en los sectores de Shapaja (4.52 km) y Santa Ana (1.87 km).
+
+Las alerta de focos de calor disminuyeron 35% en comparación con el último trimestre 2023. Se registraron 816 alertas en la ZA del parque, de las cuales 30 fueron detectadas en el anillo 1 y 5 km. Ninguna alerta de foco de calor fue detectada dentro del parque.}
+
+Fueron realizados dos capacitaciones a los guardaparques, especialistas y técnicos de CIMA y SERNANP. La primera sobre primeros auxilios, uso y manipulación de suero antiofidico. La segunda, un reforzamiento sobre los conocimientos teóricos y prácticos de la herramienta SMART mobile.
+
+Respecto de las opiniones técnicas que realiza el Parque, 132 solicitudes fueron atendidas. Cuatro de estas opiniones fueron categorizadas con un impacto Alto.
+
+Para este trimestre, la sede de Tarapoto CIMA continúa con la atención en el mantenimiento y refacciones de los Puestos de Vigilancia. Así como el equipamiento del personal guardaparque.
+
+CIMA también apoya la instalación de letreros informativos comunales en la ZA del parque. Al trimestre 2024, se tienen instalados 36 letreros informativos; distribuidos en las cuatros sedes de intervención del proyecto.
+
+Comunidades nativas y centros poblados han desarrollado con libertad sus actividades de subsistencia mediante la cacería y pesca, dentro del Parque. El promedio de edad de las personas que ingresan al parque, estuvo en un rando de 36 \~ 31 años; de 41 personas. Los mamíferos obtenidos por la cacería suman 507 kg y fueron los más aprovechados. Mientra que las aves y peces; Pucacunga (5kg) y Carachama (44 kg), respectivamente, fueron aprovechados en menor cantidad.
+
+Respecto de los registros de fauna; 40 especies fueron claramente identificadas por nombre común y científico. Mientras que, 210 especies sólo fueron registradas por nombre común y no están plenamente identificadas. Las especies de fauna más frecuentes, fueron el “*Vendado” Mazama americana, ”Sachavaca” Tapirus terrestris, ”Majas” Cunniculus paca, ”Sajino” Peccari tajacu, ”Paujil” Mitu tuberosum, Penelope jacquacu, ”Otorongo” Panthera onca y ”Tucan” Rhamphastos tucanus.* Los sitios con más registros fueron *Mojarra, Ipururo, Chimbadillo* y *Cachatigre.*
 
 # II. EVALUACIÓN DEL CUMPLIMIENTO DE ACTIVIDADES Y RESULTADOS DEL CONTRATO DE ADMINISTRACIÓN
 
@@ -260,6 +280,8 @@ En el anillo de intervención de 1 km, se ha identificado un total de 19.54 ha d
 **Apertura de vías en la ZA del Parque**
 
 En el primer trimestre 2024, se aperturo 6.39 kilómetros de vías (*trochas*) en la zona de amortiguamiento del PN Cordillera Azul, en los sectores Shapaja (4.52 km) y Santa Ana (1.87 km), ver [Anexo 1.1.5.2](https://drive.google.com/drive/folders/1Z_hH85Rf9GbDa-TtvD0bRozgPhQCHruD?usp=drive_link) - sección "apertura de trochas". Entre el 2013 y 2023, se han abierto vías dentro de Concesiones (*principalmente forestales*) y fuera de ellas, en el ámbito de la ZA del parque, el cual representa 1721.03 km de caminos (@fig-trochas).
+
+**Apertura de vías más allá de los 5 km de buffer, en la ZA**
 
 Una parte significativa de la deforestación que hemos identificado, está relacionada con la apertura de trochas en la zona de amortiguamiento, principalmente con fines de aprovechamiento forestal, ya sea dentro de una concesión o fuera de esta. Estas, tienen el propósito de conectar las concesiones con la vía principal más cercana. Destacan los sectores de Santa Ana (220.77 km) y Nuevo Dorado - Santa Catalina (380.14 km) como las áreas con mayor deforestación por apertura de vías ([Anexo 1.1.5.2](https://drive.google.com/drive/folders/1Z_hH85Rf9GbDa-TtvD0bRozgPhQCHruD?usp=drive_link)); la mayoría de estas trochas (67%) se encuentran fuera de las concesiones forestales, y son utilizadas para el transporte de madera.
 
