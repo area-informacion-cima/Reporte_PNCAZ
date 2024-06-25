@@ -71,9 +71,9 @@ Actualización de listas de prioridades de investigación. Este trimestre, se co
 
 Evaluación de áreas prioritarias de investigación con impacto en la gestión de las acciones de conservación, en la ZA del Parque. Este trimestre, se comenzó con la evaluación de áreas prioritarias de investigación, para apoya las iniciativas de conservación (@fig-iniciativas). Estas áreas serán priorizadas, para realizar una línea base de diversidad, que contribuirán a fortalecer la información científica para el turismo, así como su importancia para la conservación de especies.
 
-Trabajos de investigación desarrollados por CIMA, dentro del Parque. A la fecha, CIMA, viene desarrollando una investigación sobre "Regeneración Natural del Bosque, dentro de áreas que fueron previamente deforestadas, en el sector Palomar-Shanshuico” y “Dinámica del bosque en el sector Chambirillo". Ambas etapas, se encuentran en la etapa de análisis de información.
+Trabajos de investigación desarrollados por CIMA, dentro del Parque. A la fecha, CIMA, viene desarrollando una investigación sobre "Regeneración Natural del Bosque, dentro de áreas que fueron previamente deforestadas, en el sector Palomar-Shanshuico” y “Dinámica del bosque en el sector Chambirillo". Ambas etapas, se encuentran en la etapa de análisis de información.
 
-Elaboración de una ficha técnica técnica del “Boquichico” Prochilodus nigricans. Se concluyó que el “Boquichico” es importante en la alimentación de las comunidades asentadas entre los ríos Cushabatay y Pisqui. Además, estos lugares son claves, para la reproducción y migración de los peces (@fig- , lo cual lo hace especialmente vulnerables a las actividades de pesca sin manejo.
+Elaboración de una ficha técnica técnica del “Boquichico” Prochilodus nigricans. Se concluyó que el “Boquichico” es importante en la alimentación de las comunidades asentadas entre los ríos Cushabatay y Pisqui. Además, estos lugares son claves, para la reproducción y migración de los peces (@fig-migracion), lo cual lo hace especialmente vulnerables a las actividades de pesca sin manejo.
 
 El conjunto de datos de los procesos sociales del MUF y FOCAL son regularmente sistematizados. A la fecha, la unidad de información de CIMA, cuenta con un registro actualizado de todos estos procesos. Esta información es continuamente solicitada por profesionales de CIMA y SERNANP para reportes y análisis correspondientes. La información es guardada y protegida en el servidor institucional de CIMA, junto con los verificables que acompañan la información, en carpetas organizadas por temáticas.
 
@@ -97,9 +97,9 @@ Se inició el desarrollo del plan de trabajo de Turísmo 2024, para el Valle del
 
 Se ha continuado con las actividades de Educación Ambiental No Formal (EANF). Así, 28 centros poblados participaron en distintas sesiones de aprendizaje, del manual de educación ambiental (@fig-eanf) , siendo un total de 759 personas, entre mujeres y varones (@fig-sexo_eanf).
 
-Respecto de las normas de convivencia. Este trimestre, participaron 498 personas; 97 mujeres y 216 varones, de 10 centros poblados ( @fig-NormasComunidades). El 23% de las comunidades concluyó con normas de convivencia, aprobadas en asamblea comunal (@fig-normas).
+Respecto de las normas de convivencia. Este trimestre, participaron 498 personas; 97 mujeres y 216 varones, de 10 centros poblados (@fig-NormasComunidades). El 23% de las comunidades concluyó con normas de convivencia, aprobadas en asamblea comunal (@fig-normas).
 
-Se trabajaron los Plan de Calidad de Vida, de las comunidades nativas Shipibo Konibo Manco Capac y Kichwa Anak Kurutuyacu, y 16 centros poblados. Además, se viene realizando el seguimiento de las comunidades programadas para este año, según los sectores; Tarapoto ( @fig-pvctarapoto), Tocache y Contamana (@fig-to_co_pcv). Además, se realizaron actividades para elaboración y actualización de PCV no programdos (@fig-noprogramados).
+Se trabajaron los Plan de Calidad de Vida, de las comunidades nativas Shipibo Konibo Manco Capac y Kichwa Anak Kurutuyacu, y 16 centros poblados. Además, se viene realizando el seguimiento de las comunidades programadas para este año, según los sectores; Tarapoto (@fig-pvctarapoto), Tocache y Contamana (@fig-to_co_pcv). Además, se realizaron actividades para elaboración y actualización de PCV no programdos (@fig-noprogramados).
 
 **Resultado 5**
 
