@@ -278,9 +278,9 @@ kable(tabla, format = "html", escape = F) %>%
 library(rmarkdown)
 
 # Definir el archivo de entrada y salida
-setwd("C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ")
-input_file <- "C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/index.html"
-output_file <- "C:/Users/modicio/Documents/Proyecto_RPNCAZ/Reporte_PNCAZ/index.docx"
+setwd("U:/Reporte_PNCAZ_2024")
+input_file <- "U:/Reporte_PNCAZ_2024/index.html"
+output_file <- "U:/Reporte_PNCAZ_2024/index.docx"
 
 # Exportar el archivo HTML a Word sin estilo de referencia
 rmarkdown::pandoc_convert(input_file, to = "docx", output = output_file)

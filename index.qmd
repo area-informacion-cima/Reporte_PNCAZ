@@ -1,6 +1,6 @@
 ---
 title: "Contrato de Administración del Parque Nacional Cordillera Azul"
-author: "<span style='font-size: 1.5em;'>Centro de Conservación, Investigación y Manejo de Áreas Naturales Protegidas</span>"
+author: "<span style='font-size: 1.5em;'>Centro de Conservación, Investigación y Manejo de Áreas Naturales Protegidas -CIMA</span>"
 format: 
   html:
     toc: true
@@ -922,7 +922,7 @@ Ha quedado pendiente la realización de otra reunión que permita desarrollar al
 
 #### 4.2.3.2 Bienes y servicios realizados (prioridades de PCV)
 
-Este trimestre, se logró desarrollar 35 actividades, en el marco de las prioridades del PCV; los cuales representan Hitos logrados, al primer trimestre 2024. Se han obtenido hitos, en cada una de las sedes; Tocache (n = 14), Aguaytía (n=9), Contamana (n=7) y Tarapoto (n=6). Los Hitos cubren diversos temas, desde actividades de gestión de documentos con el estado (municipalidad, gobierno regional), asistencia técnica para la elaboración de planes de trabajo, apoyo para implementar un botiquín comunal, planes de manejo, turismo y artesanía, y apoyo a la vigilancia y control ( @tbl-hitos). Así, se cubrieron, temas relacionados al turismo, sociales, económicos y naturales, según las prioridades del plan de calidad de vida (resumen de prioridades al primer trimestre - Anexo 4.2.3.2).
+Este trimestre, se logró desarrollar 35 actividades, en el marco de las prioridades del PCV; los cuales representan Hitos logrados, al primer trimestre 2024. Se han obtenido hitos, en cada una de las sedes; Tocache (n = 14), Aguaytía (n=9), Contamana (n=7) y Tarapoto (n=6). Los Hitos cubren diversos temas, desde actividades de gestión de documentos con el estado (municipalidad, gobierno regional), asistencia técnica para la elaboración de planes de trabajo, apoyo para implementar un botiquín comunal, planes de manejo, turismo y artesanía, y apoyo a la vigilancia y control (@tbl-hitos). Así, se cubrieron, temas relacionados al turismo, sociales, económicos y naturales, según las prioridades del plan de calidad de vida (resumen de prioridades al primer trimestre - Anexo 4.2.3.2).
 
 Entre los logros resaltan en Tarapoto, el apoyo de CIMA-SERNANP en la coordinación y gestiones previas, para que la Dirección Regional de Salud del Gobierno regional de San Martín, supervise la infraestructura de salud del poblado, para su caracterización a un nivel superior al actual. En Contamana, finalmente, se ha concluído con la conformidad oficial, por la SUNARP la exclusión de los centros poblados de Fernando Belaunde Terry y Nuevo San Martón, del BPP Biavo Cordillera Azul. Finalmente, las comunidades, podrán realizar el trámite para su titulación. Actualmente, se realizan reuniones de trabajo con DISAFILPA para presentar los documentos necesarios. Asimismo, el ordenamiento de las parcelas de los pobladores, para tramitar constancias de posesión reconocidas por la Agencia Agraria; requisito clave, en la titulación.
 
@@ -934,10 +934,18 @@ load("resumen_implementados2024.RDA")
 implementados<-implementados |>
   mutate(Sede = ifelse(duplicated(Sede), "", Sede),
          Comunidad = ifelse(duplicated(Comunidad), "", Comunidad))
+# En formato rmarkdown
+#implementados |>
+#  mutate(Hito = paste0("[", Hito, "](", Link, ")")) |>
+#  select(-Link) %>%  # Eliminar la columna de URLs
+#  kable(format = "html", escape = F) |>
+#  kable_styling("striped", full_width = F) |>
+#  row_spec(0, bold = TRUE, color = "black")
+#
 implementados |>
-  mutate(Hito = paste0("[", Hito, "](", Link, ")")) |>
-  select(-Link) %>%  # Eliminar la columna de URLs
-  kable(format = "markdown", escape = F) |>
+mutate(Hito = sprintf('<a href="%s" target="_blank">%s</a>', Link, Hito))|>
+  select(-Link) |>  # Eliminar la columna de URLs
+  kable(format = "html", escape = F) |>
   kable_styling("striped", full_width = F) |>
   row_spec(0, bold = TRUE, color = "black")
 ```
@@ -1038,7 +1046,7 @@ kable(test, format = "markdown", escape = FALSE) |>
     kable_styling("striped", full_width = F)
 ```
 
-**Acontinuación se detallan algunas actividades más resaltantes durante el trimestre:**
+**A continuación, se detallan algunas actividades más resaltantes durante el trimestre:**
 
 **Asociación Agrícola y Forestal del Insaya de Nvo Dorado**
 
