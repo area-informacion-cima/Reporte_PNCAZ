@@ -632,19 +632,37 @@ hyperlinks_df <- data.frame(text = matches[, 2], link = matches[, 3], stringsAsF
 # Mostrar los hipervínculos
 print(hyperlinks_df)
 
+####### yaml original
+#---
+#  title: "Reporte T1-2024"
+#author: "CIMA"
+#format: 
+#  html:
+#  toc: true
+#knitr: 
+#  opts_chunk:
+#  warning : false
+#message : false
+#lang: es
+#editor: visual
+#bibliography: references.bib
+#---
 
+### tabla comisión de seguimiento
+setwd("U:/Reporte_PNCAZ_2024/datos")
+seguimiento<-read_xlsx("Comision_Seguimiento.xlsx" )
+# esta tabla no es ideal porque se repite, hay que colapsar los
+# nombres de las columnas que se repiten
+kable(seguimiento, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
+  row_spec(0, bold = TRUE, background = "#CCCCFF") |>
+  kable_styling("striped", full_width = F)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+seg_colapsado<-seguimiento |>
+  group_by(Año, `Resolución de conformación de la comisión de seguimiento y/o supervisión`, `Fecha de realización`) |>
+  summarise(Miembros = paste(`Miembros de la Comisión de Seguimiento`, 
+            collapse = "\n"), .groups = "drop")
+kable(seg_colapsado, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
+  row_spec(0, bold = TRUE, background = "#CCCCFF") |>
+  kable_styling("striped", full_width = F) |>
+  scroll_box(width = "700px")
 
