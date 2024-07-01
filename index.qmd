@@ -4,7 +4,6 @@ author: "<span style='font-size: 1.5em;'>Centro de Conservación, Investigación
 format: 
   html:
     toc: true
-    css: styles.css
 knitr: 
   opts_chunk:
      warning: false
