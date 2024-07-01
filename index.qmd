@@ -4,6 +4,7 @@ author: "<span style='font-size: 1.5em;'>Centro de Conservación, Investigación
 format: 
   html:
     toc: true
+    css: styles.css
 knitr: 
   opts_chunk:
      warning: false
@@ -37,9 +38,13 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Primer Informe Trimestral - 20224
+## Primer Reporte Trimestral - 2024
 
 ##### Fecha: 28 junio 2024
+
+# I. INTRODUCCIÓN
+
+Este primer reporte trimestral, se informa sobre las metas alcanzadas durante el periodo enero - marzo 2024, en el marco de los resultados del Contrato de Administración del Parque Nacional Cordillera Azul (CdA PNCAZ), correspondiente a los resultados intermedios, actividades y sub actividades plateadas para el quinquenio 2024 – 2028.
 
 # I. RESULTADOS CLAVES
 
@@ -71,11 +76,11 @@ En relación a los registros de fauna, se registraron 230 especies, en los 21 se
 
 **Resultado 2**
 
-Actualización de listas de prioridades de investigación. Este trimestre, se comenzó con la evaluación de áreas prioritarias de investigación; que orientarán el desarrollo de investigaciones en las áreas de ecológica y conservación, medio ambiente y sociología, entre los principales.
+Evaluación de áreas prioritarias de investigación. Este trimestre, se comenzó con la evaluación de áreas prioritarias de investigación; que orientarán el desarrollo de investigaciones en las áreas de ecológica y conservación, medio ambiente y sociología, entre los principales.
 
-Evaluación de áreas prioritarias de investigación con impacto en la gestión de las acciones de conservación, en la ZA del Parque. Este trimestre, se comenzó con la evaluación de áreas prioritarias de investigación, para apoya las iniciativas de conservación (@fig-iniciativas). Estas áreas serán priorizadas, para realizar una línea base de diversidad, que contribuirán a fortalecer la información científica para el turismo, así como su importancia para la conservación de especies.
+Investigaciones con impacto en la gestión de las acciones de conservación, en la ZA del Parque, a fin de apoyar las iniciativas de conservación (@fig-iniciativas). Estas áreas serán priorizadas, para realizar una línea base de diversidad, que contribuirán a fortalecer la información científica para el turismo, así como su importancia para la conservación de especies.
 
-Trabajos de investigación desarrollados por CIMA, dentro del Parque. A la fecha, CIMA, viene desarrollando una investigación sobre "Regeneración Natural del Bosque, dentro de áreas que fueron previamente deforestadas, en el sector Palomar-Shanshuico” y “Dinámica del bosque en el sector Chambirillo". Ambas etapas, se encuentran en la etapa de análisis de información.
+Trabajos de investigación desarrollados por CIMA, dentro del Parque. A la fecha, CIMA, viene desarrollando una investigación sobre "Regeneración Natural del Bosque, dentro de áreas que fueron previamente deforestadas, en el sector Palomar-Shanshuico” y “Dinámica del bosque en el sector Chambirillo". Ambas investigaciones se encuentran en etapa de análisis de información.
 
 Elaboración de una ficha técnica técnica del “Boquichico” Prochilodus nigricans. Se concluyó que el “Boquichico” es importante en la alimentación de las comunidades asentadas entre los ríos Cushabatay y Pisqui. Además, estos lugares son claves, para la reproducción y migración de los peces (@fig-migracion), lo cual lo hace especialmente vulnerables a las actividades de pesca sin manejo.
 
@@ -127,27 +132,7 @@ Se ha comercializado 4,325 VCUs por un valor de US\$25,582 autorizados con la ca
 
 ### Actividad 1.1.1 Actualización del Plan de Vigilancia y Control del PNCAZ
 
-::: callout-important
-## Actividad no programada este trimestre.
-:::
-
-#### 1.1.1.1 Reunión conjunta (SERNANP-CIMA) para la evaluación de implementación de la Estrategia y Plan de Vigilancia y Control 2020 {style="text-align: justify"}
-
-::: callout-important
-## Actividad no programada este trimestre.
-:::
-
-#### 1.1.1.2 Reunión conjunta para la elaboración del diagnóstico
-
-::: callout-important
-## Actividad no programada este trimestre.
-:::
-
-#### 1.1.1.3 Reunión y taller para la actualización y validación de la Estrategia y el Plan de Vigilancia y Control
-
-::: callout-important
-## Actividad no programada este trimestre.
-:::
+Durante el presente trimestre, continua la consultoría para la actualización de la Estrategia y el Plan de Vigilancia y Control del PNCAZA, realizada por el Bach. Cesar Bartra Navarro, se espera que los productos finales sean entregados para el segundo trimestre, para ello se coordinara con la Jefatura del PNCAZ a fin de realizar la revisión y respectiva validación.
 
 ### Actividad 1.1.2 Apoyo a la vigilancia y Control efectivo
 
@@ -243,13 +228,9 @@ En Santa Rosa de Shapaja se dio asistencia técnica para el análisis FODA y la 
 
 En el sector Tocache, se ha participado en 10 patrullajes rutinarios, en los subsecotres de Pólvora, Pucayacu y Aspuzana. Estas áreas fueron; [*Gosen*](https://drive.google.com/drive/folders/1S_gr7fDRAHSaC63XoaTq6saIZMXjHwC2?usp=drive_link)*, [Alto San Pedro](https://drive.google.com/drive/folders/1W8xv_Cd4tJ-7A-HW8nhL4-kgO0buykJs?usp=drive_link), [San Juan km 33](https://drive.google.com/drive/folders/1OpQ4erth-BUu4kOZ93Sl9QbvxangXL9q?usp=drive_link), Nueva Unión ([febrero](https://drive.google.com/drive/folders/1yh5telehgNFs2Bcb6bzOgjzj-eO8Cm0H?usp=drive_link), [marzo](https://drive.google.com/drive/folders/1EtroRkwwEpVToGm0ki9YzDXgc1WFZvu_?usp=drive_link)), [Alto Balsayacu](https://drive.google.com/drive/folders/1BI99vQRPTa1A0m3kySrit_WwfDPsFD9l?usp=drive_link), [Rio Azul Ibañez](https://drive.google.com/drive/folders/1BI99vQRPTa1A0m3kySrit_WwfDPsFD9l?usp=drive_link), [Consuelo (sector rio seco)](https://drive.google.com/drive/folders/1sR6QL8H0C1sI1dW72F9GrnpJUsZSGyqi?usp=sharing), [Jorge Basadre (sector Cerro Quemado)](https://drive.google.com/drive/folders/1I0sFHE9tm1X1LeauMzDTcboFMaw6T9yA?usp=sharing) y [Montaña Verde](https://drive.google.com/drive/folders/1I0sFHE9tm1X1LeauMzDTcboFMaw6T9yA?usp=sharing)*.
 
-En el sector Tarapoto, junto con el centro poblado Buenos Aires, sub sector Tres Unidos, los técnicos de CIMA y Guardaparques del PVC n°14 Chimbadillo, se realizó en los límites de su bosque comunal adyacente a los límites del parque ([Anexo 1.1.3.4](https://drive.google.com/drive/folders/1HLX9gKvblVK2DnR8NJQhzgJXTRhaIonV?usp=drive_link)).
-
 #### 1.1.3.5 Víveres, combustible para realización de patrullajes comunales
 
-::: callout-important
-## En las metas físicas y financieras se detallan montos globales.
-:::
+En el presente trimestre, la administración de cada sede atiende los diferentes requerimientos relacionados a víveres y combustibles, para la realización de los patrullajes comunales.
 
 ### Actividad 1.1.4 Vigilancia de Bosques Colindantes
 
@@ -395,8 +376,6 @@ kable(kit_suero_antiofidico, format = "markdown", escape = F, align = c('c', 'c'
   scroll_box(height = "300px")
 ```
 
--   Está pendiente la compra de una camilla estabilizadora para la sede Tarapoto, que será de utilidad para emergencias; teniendo en consideración que fue una necesidad detectada en una capacitación previas en primeros auxilios el 2023, realizada por la compañía de bomberos.
-
 **Capacitación de SMART en el PN Cordillera Azul**
 
 La capacitación se ha realizado con el objetivo de reforzar los conocimientos teóricos y prácticos de la herramienta SMART Mobile, en las sedes de Tarapoto, Aguaytía y Contamana (@fig-capsmart). Participaron un total de 40 personas, entre guardaparques, especialistas y técnicos de campo de CIMA y SERNANP ([Anexo 1.1.6.2](https://drive.google.com/drive/folders/1QFxadj5bm49jO_JoNxiW5YlWQwb1M7Dt?usp=drive_link)).
@@ -426,6 +405,8 @@ En la sede Tarapoto, se realizaron las siguientes acciones:
 -   Reparación y mantenimiento del biodigestor y colocación de tanque de agua subterráneo del PVC Nuevo Loreto.
 
 #### 1.1.7.4 Mantenimiento de Equipos de PVC (SERNANP-CIMA)
+
+En el presente trimestre, la administración de cada sede atiende los diferentes requerimientos relacionados al mantenimiento de equipos de los puestos de vigilancia, cuando estos son requeridos. En las metas físicas y financieras se detallan montos globales.
 
 #### 1.1.7.5 Equipamiento de PVC
 
@@ -501,7 +482,7 @@ Se registraron 13 lugares dónde las comunidades realizaron la cacería y pesca 
 
 #### 1.2.2.3 Registro de aprovechamiento de fauna
 
-Este trimestre, registramos nueve especies de importancia para la cacería y la pesca de subsistencia. Los guardaparques, registraron 32 usuarios, que ingresaron al Parque, por motivos de caza y pesca. El *"Majas"* fue la especie más importante en términos de cacería en este trimestre; 16 usuarios aprovecharon un total de 358 kg (n= 51 ind.). Los mamíferos extraídos por cacería, representan 507 kg y las aves "*Pucacunga"* 5 kg. Mientras que, respecto a la pesca, la"*Carachama*" fue la única que se registro como aprovechada; un total de siete personas pescaron 44 kg (@fig-especies_uso). El [Anexo 1.2.2.3](1.2.2.3%20Registro%20de%20aprovechamiento%20de%20caza%20y%20pesca) se presenta el conjunto de datos, con el detalle de los usuarios, su procedencia y el número de especies cazadas y pescadas.
+Este trimestre, registramos nueve especies de importancia para la cacería y la pesca de subsistencia. Los guardaparques, registraron 32 usuarios, que ingresaron al Parque, por motivos de caza y pesca. El *"Majas"* fue la especie más importante en términos de cacería en este trimestre; 16 usuarios aprovecharon un total de 358 kg (n= 51 ind.). Los mamíferos extraídos por cacería, representan 507 kg y las aves "*Pucacunga"* 5 kg. Mientras que, respecto a la pesca, la"*Carachama*" fue la única que se registro como aprovechada; un total de siete personas pescaron 44 kg (@fig-especies_uso). El [Anexo 1.2.2.3](https://drive.google.com/drive/folders/1G0kEaRk4Ey0G7oV-dfAq6NxzmXmmUXYc?usp=drive_link) se presenta el conjunto de datos, con el detalle de los usuarios, su procedencia y el número de especies cazadas y pescadas.
 
 ![Kilogramos de especies aprovechadas por cazadores y pescadores, de la ZA del PN Cordillera Azul, en el primer trimestre 2024](images/Especies_Usuarios01-03.svg){#fig-especies_uso}
 
@@ -545,7 +526,7 @@ Este trimestre, se continúa con la sistematización de los registros de los gua
 
 ### Actividad 1.3.1. Seguimiento al Contrato de Administración
 
-#### 1.3.1.1 C.Adm. (Comisión de Seguimiento)
+#### 1.3.1.1 Contrato de Administración (Comisión de Seguimiento)
 
 Durante el presente trimestre, no se desarrolla ninguna reunión de la comisión de seguimiento debido a que la Comisión Ejecutiva del Comité de Gestión no esta vigente, toda vez que su periodo de vigencia fue hasta agosto del 2023. Y por lo antes manifestado, no ha sido posible actualizar los miembros de la Comisión de Seguimiento del Contrato de Administración del PNCAZ.
 
@@ -585,12 +566,6 @@ Se entregó estos materiales el día 15 de febrero del 2024, en los ambientes de
 
 ::: callout-important
 ## Actividad no programa este trimestre.
-:::
-
-#### 1.3.3.3 Talleres de capacitación
-
-::: callout-important
-## Esta pendiente reportar si hubieron actividades este trimestre.
 :::
 
 ### Actividad 1.3.4
@@ -717,10 +692,10 @@ Resultado de esta consultaría se ha preparado un [resumen ejecutivo](https://dr
 ## El directorio 2023 (presentado en el informe anual) será actualizado y presentado en el último trimestre 2024
 :::
 
-#### 2.2.3.2. Libro "Reporte Cordillera Azul" publicaciones al 2025
+#### 2.2.3.2. Libro "Reporte Cordillera Azul" publicaciones al 2028
 
 ::: callout-important
-## Se tiene programado comenzar esta actividad a partir del tercer trimestre 2024.
+## Se tiene programado comenzar esta actividad a partir del año 2027.
 :::
 
 #### 2.2.3.3. Informes técnicos de investigación específicos para la gestión
@@ -810,7 +785,7 @@ En este trimestre se tuvieron reuniones para iniciar el plan de trabajo de Turis
 
 En este trimestre se apoyó a las organizaciones a tramitar las solicitudes para los permisos de instalaciones de letreros orientativos e informativos para los atractivos turísticos. Así también informar sobre el flujo de turismo a los atractivo turístico de Río Azul y Catarata del Otorongo, ante la Municipalidad distrital de Pucayacu. Este trimestre, se pudo concluir que el número de visitantes en el año 2023, fue de 788 personas. Esta información es importante para actualizar las fichas de registro con la municipalidad y una tarea que las asociaciones deben realizar anualmente.
 
-## Resultado 4. . Se fomenta la planificación y gestión integral del territorio que contribuye a la mejora de la calidad de vida de la población indígena y local, bajo un enfoque de derechos humano
+## Resultado 4. Se fomenta la planificación y gestión integral del territorio que contribuye a la mejora de la calidad de vida de la población indígena y local, bajo un enfoque de derechos humano
 
 ## Resultado intermedio 4.1. Las poblaciones locales mejoran sus procesos de planificación
 
@@ -846,7 +821,7 @@ Actualmente la Dirección de Planificación y Monitoreo, y la Dirección de Desa
 
 Durante el presente trimestre, a través del área administrativa de cada una de las sedes se a brindado la logística adecuada a los técnicos de campo de acuerdo a su programación mensual. Dicha logística consiste en su dotación de combustible o gastos de traslado), alimentación y hospedaje
 
-#### **4.1.3.2 Salarios Personal de Campo** 
+#### **4.1.3.2 Salarios Personal de Campo**
 
 Durante el presente trimestre, se tienen un total de 20 técnicos de campo, distribuidos de la siguiente manera: 8 en la Sede Tarapoto, 6 en la Sede Tocache, 3 en la Sede Aguaytia y 3 en la Sede Contamana. La relación esta en el item Relación de personal
 
@@ -920,6 +895,8 @@ Ha quedado pendiente la realización de otra reunión que permita desarrollar al
 
 #### 4.2.3.1 Selección de CCNN y CCPP para el quinquenio (establecer criterios)
 
+Cada una de las sedes, junto con la Dirección de Planificación y Monitoreo definieron la lista de comunidades con las que se estará trabajando este 2024.
+
 #### 4.2.3.2 Bienes y servicios realizados (prioridades de PCV)
 
 Este trimestre, se logró desarrollar 35 actividades, en el marco de las prioridades del PCV; los cuales representan Hitos logrados, al primer trimestre 2024. Se han obtenido hitos, en cada una de las sedes; Tocache (n = 14), Aguaytía (n=9), Contamana (n=7) y Tarapoto (n=6). Los Hitos cubren diversos temas, desde actividades de gestión de documentos con el estado (municipalidad, gobierno regional), asistencia técnica para la elaboración de planes de trabajo, apoyo para implementar un botiquín comunal, planes de manejo, turismo y artesanía, y apoyo a la vigilancia y control (@tbl-hitos). Así, se cubrieron, temas relacionados al turismo, sociales, económicos y naturales, según las prioridades del plan de calidad de vida (resumen de prioridades al primer trimestre - Anexo 4.2.3.2).
@@ -950,15 +927,13 @@ mutate(Hito = sprintf('<a href="%s" target="_blank">%s</a>', Link, Hito))|>
   row_spec(0, bold = TRUE, color = "black")
 ```
 
-#### 4.2.3.3 Acciones cívicas
-
 ### Actividad 4.2.4. Fortalecimiento de capacidades para un mejor acceso a los servicios de la administración pública por parte de dirigentes, líderes de comunidades nativas y centros poblados
 
 ::: callout-important
 ## Actividades están programadas a partir del tercer trimestre 2024.
 :::
 
-## Resultados intermedio 4.3 En la ZA se gestionan espacios restauración del bosque que coadyuvan a la gestión del PNCAZ bajo el enfoque integral de paisajes
+## Resultado intermedio 4.3 En la ZA se gestionan espacios restauración del bosque que coadyuvan a la gestión del PNCAZ bajo el enfoque integral de paisajes
 
 #### 4.3.1 Implementación de iniciativas de restauración ecológica en la ZA
 
@@ -972,7 +947,7 @@ En las los centros poblados de San José de Huaquisha y Buenos aires, se realiz�
 
 ## Resultado 5. Se contribuye a la mejora de la calidad de vida de las poblaciones vecinas a través del desarrollo de actividades económicas sostenibles en la ZA compatibles con la conservación del PNCAZ y la restauración de la ZA
 
-## Resultados intermedio 5.1 Se generan acuerdos de conservación con poblaciones indígenas y locales; incluyendo autoridades para la gestión integral del territorio (PNCAZ -- ZA)
+## Resultado intermedio 5.1 Se generan acuerdos de conservación con poblaciones indígenas y locales; incluyendo autoridades para la gestión integral del territorio (PNCAZ -- ZA)
 
 ### Actividad 5.1.1. Promoción y suscripción de acuerdos de conservación (organizaciones) y acuerdos azules (comunales)
 
@@ -998,7 +973,7 @@ En la sede Tocache, este trimestre se elaboraron tres planes de trabajo, en el m
 ## Actividades no programadas este trimestre.
 :::
 
-#### 5.1.1.5 Implementación de los planes de trabajo de los acuerdos de conservación}
+#### 5.1.1.5 Implementación de los planes de trabajo de los acuerdos de conservación
 
 ::: callout-important
 ## Actividades no programadas este trimestre.
@@ -1014,7 +989,7 @@ Este trimestre se desarrollaron reuniones de trabajo entre SERNANP y el equipo d
 
 ### Actividad 5.2.2. Implementación de actividades sostenibles derivadas de la planificación estratégica -- PCV. (FOTP y fondo semilla)
 
-#### 5.2.2.1 FOTP (para comunidades con PCV)
+#### 5.2.2.1 FOTP para comunidades con PCV
 
 Este trimestre, a través del Fortalecimiento Organizacional Técnico Productivo (FOTP) se atendieron un total de 16 comunidades; nativas y centros poblados. En las comunidades que cuentan con PCV, se atendieron 14 comunidades; que representan 16 organizaciones; las cuales trabajan nueve distintos productos y servicios; como el café, cacao, artesanías y turismo, entre los más importantes. En este marco, se lograron concretar 21 hitos o logros, del trimestre, los cuales corresponden a capacitaciones, manejo sostenible de las chacras, actividades de restauración y turismo, entre otros. Al cierre de este trimestre, las actividades realizadas en el marco del PCV lograron beneficiar cerca de 200 socios, de las organizaciones participantes ([Anexo 5.2.2](https://drive.google.com/drive/folders/1YSwuCkLd3D9HIhSVmdZfE_FJZwH4BYUI?usp=sharing)).
 
@@ -1258,7 +1233,7 @@ A la fecha, aún no se ha formalizado la actualización de los procesos de reval
 #### No se programaron actividades este trimestre
 :::
 
-#### 6.2.1.2 Markit (Registro Anual) 
+#### 6.2.1.2 Markit (Registro Anual)
 
 ::: callout-important
 #### No se programaron actividades este trimestre
@@ -1297,7 +1272,7 @@ Debe destacarse que a fines de marzo 2024 aún queda por cobrar a TOTALEnergies 
 #### 6.2.3.1 Fondo a Largo Plazo
 
 ::: callout-important
-#### No esta programado en el presente trimestre, el reporte financiero del Fondo a Largo Plazo debe ser alcanzado por PROFONANPE, en los próximos meses. {.callout-important}
+#### No está programado en el presente trimestre, el reporte financiero del Fondo a Largo Plazo debe ser alcanzado por PROFONANPE, en los próximos meses. {.callout-important}
 :::
 
 # Actividades transversales
@@ -1362,7 +1337,7 @@ Se ha continuado con la difusión de actividades de difusión de los procesos so
 
 # III. RELACIÓN ACTUALIZADA DE EMPLEADOS Y PERSONAL, EQUIPO CLAVE DEL CONTRATO DE ADMINISTRACIÓN Y FUNCIONES QUE REALIZAN
 
-En el [Anexo 7.2](https://drive.google.com/drive/folders/1y0SELXRCJo6RhTokPEnWqdlzlyA8G9wQ?usp=drive_link) se alcanza la relación de personal de CIMA, equipo clave del Contrato de Administración con la descripción de sus funciones, según en la Resolución Directoral N° 045-2017-SERNANP-DGANP.
+En el [Anexo 7.2](https://drive.google.com/drive/folders/1HcTNXeB4Kcu2sF8tPEempTmnhy-fUNM9?usp=drive_link) se alcanza la relación de personal de CIMA, equipo clave del Contrato de Administración con la descripción de sus funciones, según en la Resolución Directoral N° 045-2017-SERNANP-DGANP.
 
 # IV. DE LAS COMISIONES DE SEGUIMIENTO Y/O SUPERVISIÓN
 
@@ -1372,9 +1347,12 @@ Se alcanza la siguiente matriz, con el desarrollo de reuniones previas. Sin emba
 ### tabla comisión de seguimiento
 setwd("U:/Reporte_PNCAZ_2024/datos")
 seguimiento<-read_xlsx("Comision_Seguimiento.xlsx" )
+# filtrar el año
+seguimiento<-seguimiento |>
+  filter(Año==2023)
 # Colapsar en una sóla celda
 seg_colapsado<-seguimiento |>
-  group_by(Año, `Resolución de conformación de la Comisión`, `Fecha de realización`) |>
+  group_by(Año, `Resolución de conformación de la Comisión`,`Fecha de realización`) |>
   summarise(Miembros = paste(`Miembros de la Comisión`, 
             collapse = "\n"), .groups = "drop")
 kable(seg_colapsado, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
@@ -1385,4 +1363,4 @@ kable(seg_colapsado, format = "markdown", escape = FALSE, align = c('c', 'c')) |
 
 # ANEXOS
 
-Los anexos que acompañan este primer reporte trimestral, se adjuntan en la carpeta drive, denominada "[Reporte_Trimestral 2024](https://drive.google.com/drive/folders/12cFhl76nPCkcn6lz2pEbSQUl5gCC0QHt?usp=drive_link)". Los anexos, se organizan están organizados, según los Resultados, de acuerdo con la estructura programática para el quinquenio 2024 - 2028.
+Los anexos que acompañan este primer reporte trimestral, se adjuntan en la carpeta drive, denominada "[Reporte_Trimestral 2024](https://drive.google.com/drive/folders/12cFhl76nPCkcn6lz2pEbSQUl5gCC0QHt?usp=drive_link)". Los anexos, se organizan están organizados, según los Resultados, de acuerdo con la estructura programática para el quinquenio 2024 - 2028. Además, se anexa el reporte financiero elaborado por la Dirección de Administración y Finanzas junto con la Dirección de Planificación y Monitoreo.

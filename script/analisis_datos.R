@@ -276,7 +276,6 @@ kable(tabla, format = "html", escape = F) %>%
 # Instalar y cargar el paquete
 # install.packages("rmarkdown")
 library(rmarkdown)
-
 # Definir el archivo de entrada y salida
 setwd("U:/Reporte_PNCAZ_2024")
 input_file <- "U:/Reporte_PNCAZ_2024/index.html"
@@ -650,16 +649,23 @@ print(hyperlinks_df)
 
 ### tabla comisión de seguimiento
 setwd("U:/Reporte_PNCAZ_2024/datos")
+library(readxl)
+library(tidyverse)
+library(kableExtra)
 seguimiento<-read_xlsx("Comision_Seguimiento.xlsx" )
+
+seguimiento<-seguimiento |>
+  filter(Año==2023)
 # esta tabla no es ideal porque se repite, hay que colapsar los
 # nombres de las columnas que se repiten
 kable(seguimiento, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
   row_spec(0, bold = TRUE, background = "#CCCCFF") |>
   kable_styling("striped", full_width = F)
 
+seguimiento$Año
 seg_colapsado<-seguimiento |>
-  group_by(Año, `Resolución de conformación de la comisión de seguimiento y/o supervisión`, `Fecha de realización`) |>
-  summarise(Miembros = paste(`Miembros de la Comisión de Seguimiento`, 
+  group_by(Año, `Resolución de conformación de la Comisión`,`Fecha de realización`) |>
+  summarise(Miembros = paste(`Miembros de la Comisión`, 
             collapse = "\n"), .groups = "drop")
 kable(seg_colapsado, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
   row_spec(0, bold = TRUE, background = "#CCCCFF") |>
