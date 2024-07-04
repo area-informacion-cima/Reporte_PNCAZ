@@ -1,5 +1,5 @@
 ---
-title: "Contrato de Administración del Parque Nacional Cordillera Azul"
+title: "Contrato de Administración del Parque Nacional Cordillera Azul - SERNANP"
 author: "<span style='font-size: 1.5em;'>Centro de Conservación, Investigación y Manejo de Áreas Naturales Protegidas -CIMA</span>"
 format: 
   html:
@@ -37,7 +37,13 @@ library(knitr)
 library(kableExtra)
 ```
 
+|                               |                                            |
+|-------------------------------|--------------------------------------------|
+| ![](images/logo-CIMA-_3_.svg) | ![](images/Logo-Oficial-SERNANP-PNCAZ.svg) |
+
 ## Primer Reporte Trimestral - 2024
+
+![](images/Capacitacion_Guardaparques_n.jpg)
 
 ##### Fecha: 28 junio 2024
 
@@ -45,7 +51,7 @@ library(kableExtra)
 
 Este primer reporte trimestral, se informa sobre las metas alcanzadas durante el periodo enero - marzo 2024, en el marco de los resultados del Contrato de Administración del Parque Nacional Cordillera Azul (CdA PNCAZ), correspondiente a los resultados intermedios, actividades y sub actividades plateadas para el quinquenio 2024 – 2028.
 
-# I. RESULTADOS CLAVES
+## RESULTADOS CLAVE
 
 **Resultado 1**
 
@@ -117,7 +123,7 @@ A través del Fortalecimiento Organizacional Técnico Productivo (FOTP) se atend
 
 Se aprobaron tres fondos semillas, por un monto de 60 mil soles, cada uno. Además, se realizaron actividades de coordinación y apoyo técnico en la elaboración de 11 proyectos. Además, se ha concluído con la elaboración de cuatro proyecto, para los centros poblados de Consuelo, Bajo Chimbote, Inca Huasi y Lejía (@tbl-fs). Estos deben ser evaluados para su aprobación el siguiente trimestre.
 
-Respecto de la inversión financiera en Kulkao, hasta el primer trimestre, abonó la suma total de US\$8,076.92 correspondiente al interés. Así también, la cuarta amortización de US\$46, 153.85 de los US\$600,000 prestados, por CIMA. Sin embargo, este trimestre, Kulkao no ha reportado la base de datos con el registro de agricultores beneficiarios, de esta actividad.
+Respecto de la inversión financiera en Kulkao, hasta el primer trimestre, abonó la suma total de US\$8,076.92 correspondiente al interés. Así también, la cuarta amortización de US\$46, 153.85 de los US\$600,000 prestados, por CIMA.
 
 **Resultado 6**
 
@@ -131,7 +137,9 @@ Se ha comercializado 4,325 VCUs por un valor de US\$25,582 autorizados con la ca
 
 ### Actividad 1.1.1 Actualización del Plan de Vigilancia y Control del PNCAZ
 
-Durante el presente trimestre, continua la consultoría para la actualización de la Estrategia y el Plan de Vigilancia y Control del PNCAZA, realizada por el Bach. Cesar Bartra Navarro, se espera que los productos finales sean entregados para el segundo trimestre, para ello se coordinara con la Jefatura del PNCAZ a fin de realizar la revisión y respectiva validación.
+#### 1.1.1.4 Soporte tecnico para el proceso de actualización del Plan de Vigilancia y Control
+
+Durante el presente trimestre, continua la consultoría para la actualización de la Estrategia y el Plan de Vigilancia y Control del PNCAZA, realizada por el Antropólogo Cesar Bartra Navarro, se espera que los productos finales sean entregados para el segundo trimestre, para ello se coordinara con la Jefatura del PNCAZ a fin de realizar la revisión y respectiva validación.
 
 ### Actividad 1.1.2 Apoyo a la vigilancia y Control efectivo
 
@@ -315,7 +323,7 @@ kable(tabla_html, format = "html", escape = F, col.names = NULL) %>%   kable_sty
 scroll_box(height = "400px")
 ```
 
-#### 1.1.5.3 Equipamiento del área SIG (PC, drone, otros)
+#### 1.1.5.3 Equipamiento para la vigilancia remota (PC,drones, otros)
 
 ::: callout-important
 ## Actividad no programa este trimestre.
@@ -327,9 +335,9 @@ scroll_box(height = "400px")
 ## Actividad no programa este trimestre.
 :::
 
-### Actividad 1.1.6 Capacitación del personal guardaparque, especialista y técnicos
+### Actividad 1.1.6 Capacitación del personal guardaparque, especialista y técnicos de campo
 
-#### 1.1.6.1 Elaboración de un plan quinquenal de capacitaciones
+#### 1.1.6.1 Elaboración de un plan quinquenal de capacitaciones de campo
 
 ::: callout-important
 ## Actividad no programa este trimestre.
@@ -605,18 +613,12 @@ Junto con la conformación del comité de investigadores y participación de la 
 
 #### 2.1.1.3. Concurso anual de investigaciones prioritarias dentro del parque y su ZA (nota: el comité evalúa las propuestas).
 
-Esta actividad se iniciará durante el segundo trimestre del año 2024 y en se tiene programado lanzar la convocatoria en agosto. Se viene trabajando en nuevas bases y objetivos de la convocatoria.
+Esta actividad se iniciará en los siguientes trimestres del año 2024. Se viene trabajando en nuevas bases y objetivos de la convocatoria.
 
 #### 2.1.1.4. Establecer convenios con instituciones de investigación \*Como meta se propone dos proyectos financiados.
 
 ::: callout-important
 ## Esta actividad está programada para el tercer trimestre.
-:::
-
-#### 2.1.1.5. Proyectos elaborados y con financiamiento, resultado de los convenios de investigación
-
-::: callout-note
-## Esta actividad depende de la actividad 2.1.1.4
 :::
 
 ### Actividad 2.1.2. Monitoreo de la vegetación y fauna silvestre del PNCAZ
@@ -704,12 +706,6 @@ En secciones anteriores del informe se han descrito los trabajos desarrollados c
 #### 2.2.3.4. Publicaciones científicas
 
 Se tiene programado someter una investigación científica sobre la fauna silvestre y la vigilancia y control, durante el tercer trimestre 2024.
-
-#### 2.2.3.5. Presentaciones en eventos científicos
-
-::: callout-important
-Las áreas técnicas de información y SIG de CIMA, están desarrollando trabajajos sobre los registros de fauna, socio-ecológicos y vigilancia remota, con miras a la presentación de trabajos de investigación en el congreso de [Investigaciones en ANPs](https://www.gob.pe/institucion/sernanp/noticias/942845-madre-de-dios-sera-sede-del-ii-congreso-de-investigaciones-cientificas-en-areas-naturales-protegidas), en octubre 2024.
-:::
 
 # Resultado 3. Se promueve el desarrollo de actividades de turismo sostenible en sectores determinados del PNCAZ y su ZA, generando beneficios para su gestión, y para las poblaciones indígenas y locales
 
@@ -826,7 +822,7 @@ Durante el presente trimestre, se tienen un total de 20 técnicos de campo, dist
 
 #### 4.1.3.3 EANF
 
-Se realizaron distintas sesiones de aprendizaje, de acuerdo al manual de educación ambiental, con la participación de 28 centros poblados. Distribuídos en las sedes de Aguaytía; *La Libertad de Samiria y Nuevo Jordan*; Tarapoto; *La primavera, Miraflores, Pucallpa, Ruega Dios, San José de Yanayacu, San Juan de Shitari ,Santa Rosa de Huayali*; Tocache; *Alto Chimbote, Alto Pacotillo, Centro Rio Azul, Ibañez, Consuelo, Gossen, Jorge Basadre, La Colpa, Mantención, Maronilla, Nueva Unión, Rio Blanco, San Juan Km33, Sargento Lores de Balsayacu, Valle San Juan, Vista Alegre;* @fig-eanf.
+Se realizaron distintas sesiones de aprendizaje, de acuerdo al manual de educación ambiental, con la participación de 24 centros poblados. Distribuídos en las sedes de Aguaytía; *La Libertad de Samiria y Nuevo Jordan*; Tarapoto; *La primavera, Miraflores, Pucallpa, Ruega Dios, San José de Yanayacu, San Juan de Shitari ,Santa Rosa de Huayali*; Tocache; *Alto Chimbote, Alto Pacotillo, Centro Rio Azul Ibañez, Consuelo, Gossen, Jorge Basadre, La Colpa, Mantención, Maronilla, Nueva Unión, Rio Blanco, San Juan Km33, Sargento Lores de Balsayacu, Valle San Juan, Vista Alegre;* @fig-eanf.
 
 ![Porcentaje de comunidades participantes de la EANF (n=28 comunidades), de acuerdo con las sesiones del Manual de Educación Ambiental, en la ZA del PN Cordillera Azul, durante el primer trimestre 2024.](images/Comunidades_EANF.svg){#fig-eanf}
 
@@ -898,7 +894,7 @@ Cada una de las sedes, junto con la Dirección de Planificación y Monitoreo def
 
 #### 4.2.3.2 Bienes y servicios realizados (prioridades de PCV)
 
-Este trimestre, se logró desarrollar 35 actividades, en el marco de las prioridades del PCV; los cuales representan Hitos logrados, al primer trimestre 2024. Se han obtenido hitos, en cada una de las sedes; Tocache (n = 14), Aguaytía (n=9), Contamana (n=7) y Tarapoto (n=6). Los Hitos cubren diversos temas, desde actividades de gestión de documentos con el estado (municipalidad, gobierno regional), asistencia técnica para la elaboración de planes de trabajo, apoyo para implementar un botiquín comunal, planes de manejo, turismo y artesanía, y apoyo a la vigilancia y control (@tbl-hitos). Así, se cubrieron, temas relacionados al turismo, sociales, económicos y naturales, según las prioridades del plan de calidad de vida (resumen de prioridades al primer trimestre - Anexo 4.2.3.2).
+Este trimestre, se logró desarrollar 35 actividades, en el marco de las prioridades del PCV; los cuales representan Hitos logrados, al primer trimestre 2024. Se han obtenido hitos, en cada una de las sedes; Tocache (n = 14), Aguaytía (n=9), Contamana (n=7) y Tarapoto (n=6). Los Hitos cubren diversos temas, desde actividades de gestión de documentos con el estado (municipalidad, gobierno regional), asistencia técnica para la elaboración de planes de trabajo, apoyo para implementar un botiquín comunal, planes de manejo, turismo y artesanía, y apoyo a la vigilancia y control (@tbl-hitos). Así, se cubrieron, temas relacionados al turismo, sociales, económicos y naturales, según las prioridades del plan de calidad de vida (resumen de prioridades al primer trimestre - [Anexo 4.2.3.2](https://drive.google.com/drive/folders/1bY9Ua5ZEBPZGT8tauhVJ_APLNPUtwTfT?usp=drive_link)).
 
 Entre los logros resaltan en Tarapoto, el apoyo de CIMA-SERNANP en la coordinación y gestiones previas, para que la Dirección Regional de Salud del Gobierno regional de San Martín, supervise la infraestructura de salud del poblado, para su caracterización a un nivel superior al actual. En Contamana, finalmente, se ha concluído con la conformidad oficial, por la SUNARP la exclusión de los centros poblados de Fernando Belaunde Terry y Nuevo San Martón, del BPP Biavo Cordillera Azul. Finalmente, las comunidades, podrán realizar el trámite para su titulación. Actualmente, se realizan reuniones de trabajo con DISAFILPA para presentar los documentos necesarios. Asimismo, el ordenamiento de las parcelas de los pobladores, para tramitar constancias de posesión reconocidas por la Agencia Agraria; requisito clave, en la titulación.
 
@@ -950,29 +946,25 @@ En las los centros poblados de San José de Huaquisha y Buenos aires, se realiz�
 
 ### Actividad 5.1.1. Promoción y suscripción de acuerdos de conservación (organizaciones) y acuerdos azules (comunales)
 
-#### 5.1.1.1 Actividades preparatorias para la elaboración de los acuerdos de conservación (AdC)
+#### 5.1.1.1 Actividades preparatorias para la elaboración de los acuerdos de conservación (AdC), incluye su plan de trabajo
 
 Se realizó la socialización de las actividades previas a la firna de acuerdos de conservación y los compromisos que ello involucra para la comunidad, CIMA y SERNANP. Esta actividad, fue desarrollado en los centros poblados de San José de Yanayacu, en Tarapoto. Así como, en las comunidad nativas La Cumbre, Manco Capac, Isolaya y La Libertad y los centros poblados Fernando Belaunde Terry y Nuevo San Martín, en Contamana ([Anexo 5.1.1.1 - ver informe](https://drive.google.com/drive/folders/19jjzedSHOKze-D_Op5XTU5lj3hpYgnq3?usp=sharing)). La firma de acuerdos, se ha programado para el siguiente trimestre.
 
 En el sector Tocache, se informó a las comunidades de Buenos Aire, Cachiyacu, San José de Huaquisha, sobre los acuerdos de conservación y su importancia. Estas comunidades ya cuentan con Planes de Calidad de Vida, y se está apoyando la implementación de prioridades. De igual manera, se socializó los Acuerdos de Conservación a las Agricultores interesados en la conservación de la microcuenca Picota, en el distrito de Pólvora ([Anexo 5.1.1.1 - reunion informativa](https://drive.google.com/drive/folders/162lOwBN0norQSjwbR5vCHitXU3ECUrHO?usp=sharing)).
 
-#### 5.1.1.2  Evento para la firma del AdC
-
-::: callout-important
-## Este trimestre no se firmaron acuerdos de conservación. {.callout-important}
-:::
-
-#### 5.1.1.3 Elaboración de planes de trabajo
-
 En la sede Tocache, este trimestre se elaboraron tres planes de trabajo, en el marco de los acuerdos de conservación con la cooperativa Agraria nueva visión LTDA, que es encuentra en el centro poblado de Cachiyacu, y la Cooperativa de servicios especiales Bioaltura LTDA y a la Empresa cacaotera ARGE S.A.C, en el centro poblado Maronilla.
 
-#### 5.1.1.4. Fortalecimiento de capacidades de los Coordinadores
+#### 5.1.1.2 Evento para la firma del AdC
+
+Este trimestre no se firmaron acuerdos de conservación.
+
+#### 5.1.1.3 Fortalecimiento de capacidades de los Coordinadores
 
 ::: callout-important
 ## Actividades no programadas este trimestre.
 :::
 
-#### 5.1.1.5 Implementación de los planes de trabajo de los acuerdos de conservación
+#### 5.1.1.4 Implementación de los planes de trabajo de los acuerdos de conservación
 
 ::: callout-important
 ## Actividades no programadas este trimestre.
@@ -1048,20 +1040,19 @@ load("fondo_semilla_T1-2024.RDA")
 fstable<-fs|>
   select(Sede,Año_n, Año, Comunidad,Organizaciones, Codigo_fs, N_Familias, 
          Tipo_apoyo, Producto, Periodo_meses, Primer_desembolso,
-         Trimestre_primer.desembolso, Segundo_desembolso,Año_segundo_desembolso, 
-         Trimestre_primer.desembolso2) |>
+         `Trimestre_primer desembolso`, Segundo_desembolso,Año_segundo_desembolso, 
+         `Trimestre_primer desembolso2`) |>
   filter(Año==2024) |>
   select(Sede,Comunidad,Organizaciones,Codigo_fs,N_Familias, Tipo_apoyo, Producto,Periodo_meses, Primer_desembolso) |>
   arrange(Sede) |>
   mutate(Sede = ifelse(duplicated(Sede), "", Sede))
 
 kable(fstable, format = "markdown", col.names = c("Sede", "Comunidad","Organizaciones","Codigo FS","familias","Tipo de apoyo","Producto", "Duración del proyecto","Primer desembolso"), table.attr = "class='table table-bordered'") |>
-  kable_styling(bootstrap_options =c("striped","hover"), full_width = F) |>
+    kable_styling(bootstrap_options =c("striped","hover"), full_width = F) |>
     row_spec(0, bold = TRUE, color = "black") |>
     row_spec(c(1, 2), background = "#CCCCFF")|>
     row_spec(c(3,4,5,6,7), background = "#FFCC99") |>
-    row_spec(c(8,9,10,11), background = "#99FF99") |>
-    scroll_box(height = "350px")
+    row_spec(c(8,9,10,11), background = "#99FF99")
 ```
 
 **Seguimiento a los proyectos del fondo semilla.** Se continúa con el seguimiento de los proyectos financiados, entre el 2022 y 2023. Es así que, se ha solicitado la ampliación de plazo para culminar proyectos del fondo semilla, y se ha realizado el cierre de 2 proyectos ([Anexo 5.2.2.2 - lista y detalle de proyectos](https://docs.google.com/spreadsheets/d/1xsC_5Ip56avDkQrDvzPztdKvwu1i75hG/edit?usp=sharing&ouid=113830731125206242650&rtpof=true&sd=true)).
@@ -1090,7 +1081,22 @@ Además, se realizaron 218 asistencias técnicas a los agricultores que proveen 
 
 #### 5.2.3.1 Priorización de CCNN/CCPP y organizaciones
 
-Las sedes de Tarapoto, Tocache, Contamana y Aguaytía han priorizados las comunidades nativas y centros poblados, ha trabajar durante este 2023.
+Para este 2024, las coordinaciones de sede priorizaron un total de 95 Centros Poblados y 11 comunidades nativas (@tbl-com). Estas comunidades fueron seleccionadas sobre la base del trabajo realizado en cada una de las sedes administrativas de Tarapoto, Tocache, Aguaytía y Contamana. Esta es una lista preliminar, que será ajustada para el siguiente trimestre. Además, se añadirá el nombre y número de organizaciones, que se ha programado trabajar, según cada comunidad seleccionada.
+
+```{r, echo=FALSE, eval=T}
+#| label: tbl-com
+#| tbl-cap: "Comunidades priorizadas para el desarrollo de actividades en el marco del proceso FOCAL y actividades económicas sostenibles, durante el 2024"
+setwd("U:/Reporte_PNCAZ_2024/datos")
+com_prog<- read_xlsx("Comunidades_Programadas_2024_03_07-2024.xlsx")
+priorizados<-
+  com_prog |>
+  filter(Tipo != c("Asociación", "Comité"))
+
+kable(priorizados, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
+    row_spec(0, bold = TRUE, background = "#CCCCFF") |>
+    kable_styling("striped", full_width = F) |>
+    scroll_box(height ="400px",   width = "800px")
+```
 
 #### 5.2.3.2 Fortalecimiento Organizacional Técnico Productivo (no cuentan con PCV)
 
@@ -1159,10 +1165,6 @@ Las operaciones financieras proyectadas se vienen llevando a cabo cumpliendo KUL
 En marzo de este año KULKAO ha cumplido también en pagar la cuarta amortización de **US\$46,153.85** de las trece programadas en el tercer convenio, quedando un capital de **US\$415,384.60** aún por amortizar, de los **US\$600,000** prestados.
 
 El tercer convenio, de acuerdo a los términos suscritos, Kulkao debe continuar sus operaciones hasta mediados de junio 2026, proyectándose que de enero a junio 2024 generar las operaciones de devolución del capital restante, así como los respectivos intereses.
-
-::: callout-important
-Es importante resaltar, que la empresa Kulkao, no ha reportado la base de datos, que detalla el registro de agricultores beneficiarios de la inversión realizada. Hemos intentado comunicarnos desde el 22 de abril, pero no hemos tenido respuesta. Esperamos que puedan responder a la brevedad.
-:::
 
 ### 5.2.5. Desarrollo y aplicación de la marca Aliados por la Conservación
 
@@ -1323,6 +1325,10 @@ Participación en el taller macro regional para la actualización de la Estrateg
 Participación en la primera reunión ordinaria de la Comisión Ambiental regional de San Martín, en donde la secretaría técnica de esta plataforma ha socializado los avances en la implementación de los diferentes instrumentos de gestión ambiental de la región. Por nuestra parte, solicitamos la reactivación de los grupos técnicos conformados al interior de la CAR, así como la descentralización de las reuniones, con la finalidad de asegurar la participación de los demás actores de la región. La solicitud fue aceptada, y en una reunión virutal, se dejó de manifiesto la intención de CIMA, de continuar en la coordinación del grupo técnico de restauración ecológica. Adicionalmente, se propuso que cada uno de los grupos, en la comisión ambiental, debería proponer un plan de trabajo a implementarse en el transcurso del año.
 
 **Comisión ambiental Municipal-Tocache.** Se socializó a la CAM los resultados del inventario local de gases de efecto invernadero, en marco a la formulación del Plan local de Cambio Climático, de la provincia de Tocache. Producto de esta reunión se acordó elaborar un análisis de riesgo, de la provincia, para la formulación de las medidas de adaptación al cambio climático. CIMA se ha comprometido con el ARA San Martín a desarrollar reuniones de trabajo, para este fin ([Anexo actividad 2.1](https://drive.google.com/drive/folders/1Kb9g65qNkZHOzG6VHACsIiPh_gdZVmIE?usp=sharing)).
+
+#### 2.1. Participación en eventos científicos y otros espacios de divulgación 
+
+Las áreas técnicas de información y SIG de CIMA, están desarrollando trabajos sobre los registros de fauna, socio-ecológicos y vigilancia remota, con miras a la presentación de trabajos de investigación en el congreso de Investigaciones en ANPs, en octubre 2024.
 
 ### Actividad 3. Difusión y diseminación de experiencias
 

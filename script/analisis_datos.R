@@ -277,14 +277,13 @@ kable(tabla, format = "html", escape = F) %>%
 # install.packages("rmarkdown")
 library(rmarkdown)
 # Definir el archivo de entrada y salida
+getwd()
 setwd("U:/Reporte_PNCAZ_2024")
 input_file <- "U:/Reporte_PNCAZ_2024/index.html"
 output_file <- "U:/Reporte_PNCAZ_2024/index.docx"
 
 # Exportar el archivo HTML a Word sin estilo de referencia
 rmarkdown::pandoc_convert(input_file, to = "docx", output = output_file)
-
-
 
 ############ tabla de turismo: 3.3.3.1 Mejora de infraestructura
 # Crear el data frame
@@ -390,9 +389,12 @@ implementados %>%
   row_spec(0, bold = TRUE, color = "black")
 
 ############ Fondo Semilla #######
-getwd()
+setwd("U:/Reporte_PNCAZ_2024/datos")
 fs<-read.csv(file = "resumen_fs.csv", header = T, sep=";",na.strings = "NA",
              fileEncoding = "latin1")
+
+fs<-read_xlsx("resumen_fs.xlsx" )
+
 fs<-glimpse(fs)
 fs[is.na(fs)]<-0
 
@@ -426,8 +428,8 @@ fs$Organizaciones <- replace_special_characters(fs$Organizaciones)
 fs$Producto <- replace_special_characters(fs$Producto)
 fs$Comunidad <- replace_special_characters(fs$Comunidad)
 ### save as rda ###
-# getwd()
-setwd("U:/Reporte_PNCAZ/rda")
+getwd()
+setwd("U:/Reporte_PNCAZ_2024/rda")
 save(fs, file = "fondo_semilla_T1-2024.RDA")
 rm(list = ls())
 # Crear un objeto para seleccionar los datos y crear la tabla
@@ -437,8 +439,8 @@ load("fondo_semilla_T1-2024.RDA")
 fstable<-fs|>
   select(Sede,Año_n, Año, Comunidad,Organizaciones, Codigo_fs, N_Familias, 
          Tipo_apoyo, Producto, Periodo_meses, Primer_desembolso,
-         Trimestre_primer.desembolso, Segundo_desembolso,Año_segundo_desembolso, 
-         Trimestre_primer.desembolso2) |>
+         `Trimestre_primer desembolso`, Segundo_desembolso,Año_segundo_desembolso, 
+         `Trimestre_primer desembolso2`) |>
   filter(Año==2024) |>
   select(Sede,Comunidad,Organizaciones,Codigo_fs,N_Familias, Tipo_apoyo, Producto,Periodo_meses, Primer_desembolso) |>
   arrange(Sede) |>
@@ -575,10 +577,6 @@ library(xml2)
 library(rvest)
 library(dplyr)
 
-
-
-
-
 # Leer el archivo .qmd como texto
 qmd_content <- readLines("index.qmd")
 
@@ -671,4 +669,32 @@ kable(seg_colapsado, format = "markdown", escape = FALSE, align = c('c', 'c')) |
   row_spec(0, bold = TRUE, background = "#CCCCFF") |>
   kable_styling("striped", full_width = F) |>
   scroll_box(width = "700px")
+
+###################################################
+library(readxl)
+library(kableExtra)
+
+com_prog<- read_xlsx("Comunidades_Programadas_2024_03_07-2024.xlsx")
+
+com_prog |>
+  filter(Tipo != c("Asociación", "Comité")) |>
+  kable(com_prog, format = "markdown", escape = FALSE, align = c('c', 'c')) |>
+    row_spec(0, bold = TRUE, background = "#CCCCFF") |>
+    kable_styling("striped", full_width = F) |>
+    scroll_box(height ="400px",   width = "600px")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
